@@ -1,0 +1,13 @@
+{
+  "questions": [
+    {
+      "question_id": "",
+      "question_text": "",
+      "question_type": "categorical",
+      "answer_options": [
+        ["", 0.0]
+      ],
+      "importance_score": 1.0
+    }
+  ]
+}
