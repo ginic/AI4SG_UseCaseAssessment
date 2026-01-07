@@ -40,7 +40,6 @@ def main():
         st.error(f"Unexpected error: {e}")
 
     # Add navigation buttons
-    st.markdown("---")
     add_navigation_buttons("Organizational Constraints")
 
 
