@@ -1,0 +1,2 @@
+[ ] Break up question display and scoring functions into different collections
+[ ] Want to add a result that gives an estimate of how big the project that uses answers from specific questions in both technical and org sections

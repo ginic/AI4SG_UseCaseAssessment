@@ -32,7 +32,7 @@ This will install:
 
 Start the Streamlit app:
 ```bash
-streamlit run app.py
+streamlit run Introduction.py
 ```
 
 The application will open in your default web browser at `http://localhost:8501`.
@@ -41,7 +41,7 @@ The application will open in your default web browser at `http://localhost:8501`
 
 ```
 .
-├── app.py                          # Main application entry point
+├── Introduction.py                          # Main application entry point
 ├── pages/                          # Multi-page app pages
 │   ├── 1_Organizational_Constraints.py
 │   ├── 2_Technical_Constraints.py

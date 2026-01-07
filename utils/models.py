@@ -15,6 +15,7 @@ class Question(BaseModel):
     - question_text: The text displayed to users
     - question_type: Type of question (categorical or range)
     - answer_options: List of (option_text, score) tuples
+    - description: Optional detailed description shown on mouseover
 
     Mutable fields (can be changed):
     - importance_score: Weight of this question in overall scoring
@@ -26,6 +27,7 @@ class Question(BaseModel):
     question_text: str
     question_type: Literal["categorical", "range"] = "categorical"
     answer_options: list[tuple[str, float]]  # (option_text, score)
+    description: Optional[str] = None
 
     # Mutable fields
     importance_score: float = Field(default=1.0, ge=0)
