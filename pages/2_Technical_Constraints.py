@@ -34,6 +34,8 @@ def main():
             question.user_response = response
             st.markdown("---")
 
+        st.session_state[SESSION_TECHNICAL_RESPONSES] = question_collection
+
     except FileNotFoundError as e:
         st.error(f"Error loading questions: {e}")
     except Exception as e:
