@@ -9,6 +9,7 @@ PROJECT_ROOT = Path(__file__).parent.parent
 DATA_DIR = PROJECT_ROOT / "data"
 
 # Data file paths
+QUESTIONS_PATH = DATA_DIR / "questions.json"
 ORGANIZATIONAL_QUESTIONS_PATH = DATA_DIR / "organizational_questions.json"
 TECHNICAL_QUESTIONS_PATH = DATA_DIR / "technical_questions.json"
 

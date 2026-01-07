@@ -1,0 +1,499 @@
+[
+    {
+        "question_id": "O-0001",
+        "question_text": "Do we need to fix it within the next 3 months?",
+        "description": "This question assesses the time criticality of addressing the problem. Consider whether the issue requires a functional solution within the next three months (e.g. to avoid operational disruption, compliance issues, or missed opportunities), or whether it can be addressed as part of a longer-term improvement initiative",
+        "question_type": "categorical",
+        "answer_options": [
+            [
+                "Yes",
+                1.0
+            ],
+            [
+                "No",
+                0.0
+            ]
+        ],
+        "importance_score": 1.0
+    },
+    {
+        "question_id": "O-0002",
+        "question_text": "Is this a business process improvement or mission supporting?",
+        "description": "This question distinguishes whether the problem primarily concerns improving internal operations and workflows (e.g. automating working hours reporting) or directly supporting or expanding the organisation's mission (e.g. monitoring coral reefs using remote sensing for environmental conservation). Consider where the primary value of a potential solution would be realised.",
+        "question_type": "categorical",
+        "answer_options": [
+            [
+                "Process",
+                0.0
+            ],
+            [
+                "Mission",
+                1.0
+            ]
+        ],
+        "importance_score": 1.0
+    },
+    {
+        "question_id": "O-0003",
+        "question_text": "Is there a clear beneficiary or end user?",
+        "description": "This question assesses whether there is a clearly identifiable group or role that will use the solution and benefit from it. Consider whether you can name specific users (e.g. roles, teams, or external groups) who would regularly use the tool and derive clear value from it.",
+        "question_type": "categorical",
+        "answer_options": [
+            [
+                "Yes",
+                1.0
+            ],
+            [
+                "No",
+                0.0
+            ]
+        ],
+        "importance_score": 1.0
+    },
+    {
+        "question_id": "O-0004",
+        "question_text": "How willing is your org to spend $ on tech sol'n?",
+        "description": "This question assesses whether the organisation is willing and able to allocate budget to a technical solution, given competing priorities. Consider whether spending on technology is currently seen as an acceptable and justified use of funds compared to other expenditures more directly tied to the core mandate.",
+        "question_type": "categorical",
+        "answer_options": [
+            [
+                "Yes",
+                1.0
+            ],
+            [
+                "No",
+                0.0
+            ]
+        ],
+        "importance_score": 1.0
+    },
+    {
+        "question_id": "O-0005",
+        "question_text": "Does your org already have an AI policy?",
+        "description": "This question assesses whether there are established organisational policies or guidelines governing the use of AI or advanced digital technologies. Such policies typically address issues like data protection, ethics, risk management, accountability, and procurement, and provide a common framework for decision-making.",
+        "question_type": "categorical",
+        "answer_options": [
+            [
+                "Yes",
+                1.0
+            ],
+            [
+                "No",
+                0.0
+            ]
+        ],
+        "importance_score": 1.0
+    },
+    {
+        "question_id": "O-0006",
+        "question_text": "Attitude within org toward AI?",
+        "question_type": "categorical",
+        "answer_options": [
+            [
+                "Excited",
+                1.0
+            ],
+            [
+                "Neutral",
+                0.5
+            ],
+            [
+                "Negative",
+                0.0
+            ]
+        ],
+        "importance_score": 1.0
+    },
+    {
+        "question_id": "O-0007",
+        "question_text": "Champions/Ambassador: Can you identify an influential person who has flexibility to support efforts/experiments?",
+        "question_type": "categorical",
+        "answer_options": [
+            [
+                "Yes",
+                1.0
+            ],
+            [
+                "No",
+                0.0
+            ]
+        ],
+        "importance_score": 1.0
+    },
+    {
+        "question_id": "O-0008",
+        "question_text": "What are your donors' attitude toward AI?",
+        "question_type": "categorical",
+        "answer_options": [
+            [
+                "Excited",
+                1.0
+            ],
+            [
+                "Neutral",
+                0.5
+            ],
+            [
+                "Negative",
+                0.0
+            ]
+        ],
+        "importance_score": 1.0
+    },
+    {
+        "question_id": "O-0009",
+        "question_text": "Is it mission-critical?",
+        "question_type": "categorical",
+        "answer_options": [
+            [
+                "Yes",
+                1.0
+            ],
+            [
+                "No",
+                0.0
+            ]
+        ],
+        "importance_score": 1.0
+    },
+    {
+        "question_id": "O-0010",
+        "question_text": "Is there a manual redundancy/fallback already?",
+        "question_type": "categorical",
+        "answer_options": [
+            [
+                "Yes",
+                1.0
+            ],
+            [
+                "No",
+                0.0
+            ]
+        ],
+        "importance_score": 1.0
+    },
+    {
+        "question_id": "O-0011",
+        "question_text": "Would a mistake be life-threatening?",
+        "question_type": "categorical",
+        "answer_options": [
+            [
+                "Yes",
+                1.0
+            ],
+            [
+                "No",
+                0.0
+            ]
+        ],
+        "importance_score": 1.0
+    },
+    {
+        "question_id": "O-0012",
+        "question_text": "Would a mistake affect your material/assets?",
+        "question_type": "categorical",
+        "answer_options": [
+            [
+                "Yes",
+                1.0
+            ],
+            [
+                "No",
+                0.0
+            ]
+        ],
+        "importance_score": 1.0
+    },
+    {
+        "question_id": "O-0013",
+        "question_text": "Would a mistake affect your staff?",
+        "question_type": "categorical",
+        "answer_options": [
+            [
+                "Yes",
+                1.0
+            ],
+            [
+                "No",
+                0.0
+            ]
+        ],
+        "importance_score": 1.0
+    },
+    {
+        "question_id": "O-0014",
+        "question_text": "Would a mistake affect customers/beneficiaries/donors?",
+        "question_type": "categorical",
+        "answer_options": [
+            [
+                "Yes",
+                1.0
+            ],
+            [
+                "No",
+                0.0
+            ]
+        ],
+        "importance_score": 1.0
+    },
+    {
+        "question_id": "O-0015",
+        "question_text": "Would a mistake affect your mission/mandate?",
+        "question_type": "categorical",
+        "answer_options": [
+            [
+                "Yes",
+                1.0
+            ],
+            [
+                "No",
+                0.0
+            ]
+        ],
+        "importance_score": 1.0
+    },
+    {
+        "question_id": "O-0016",
+        "question_text": "Would a mistake affect your reputation?",
+        "question_type": "categorical",
+        "answer_options": [
+            [
+                "Yes",
+                1.0
+            ],
+            [
+                "No",
+                0.0
+            ]
+        ],
+        "importance_score": 1.0
+    },
+    {
+        "question_id": "T-0001",
+        "question_text": "Do we already have data around problem?",
+        "question_type": "categorical",
+        "answer_options": [
+            [
+                "Yes",
+                1.0
+            ],
+            [
+                "No",
+                0.0
+            ]
+        ],
+        "importance_score": 1.0
+    },
+    {
+        "question_id": "T-0002",
+        "question_text": "Do we know how to collect data in future?",
+        "question_type": "categorical",
+        "answer_options": [
+            [
+                "Yes",
+                1.0
+            ],
+            [
+                "No",
+                0.0
+            ]
+        ],
+        "importance_score": 1.0
+    },
+    {
+        "question_id": "T-0003",
+        "question_text": "Does your data include sensitive personal information?",
+        "question_type": "categorical",
+        "answer_options": [
+            [
+                "Yes",
+                1.0
+            ],
+            [
+                "No",
+                0.0
+            ]
+        ],
+        "importance_score": 1.0
+    },
+    {
+        "question_id": "T-0004",
+        "question_text": "Data format",
+        "question_type": "categorical",
+        "answer_options": [
+            [
+                "Text",
+                0.0
+            ],
+            [
+                "Audio",
+                0.125
+            ],
+            [
+                "Images",
+                0.25
+            ],
+            [
+                "Spreadsheets",
+                0.375
+            ],
+            [
+                "Tabular/Structured DB",
+                0.5
+            ],
+            [
+                "Geospatial",
+                0.625
+            ],
+            [
+                "Video",
+                0.75
+            ],
+            [
+                "Combination",
+                0.875
+            ],
+            [
+                "Multimodal/Mix (Social Media)",
+                1.0
+            ]
+        ],
+        "importance_score": 1.0
+    },
+    {
+        "question_id": "T-0005",
+        "question_text": "Quantity of data",
+        "question_type": "categorical",
+        "answer_options": [
+            [
+                "< 100 files/records",
+                0.0
+            ],
+            [
+                "100-1000 files/records",
+                0.33
+            ],
+            [
+                "1000-10000 files/records",
+                0.67
+            ],
+            [
+                "> 10000 files/records",
+                1.0
+            ]
+        ],
+        "importance_score": 1.0
+    },
+    {
+        "question_id": "T-0006",
+        "question_text": "Frequency of use",
+        "question_type": "categorical",
+        "answer_options": [
+            [
+                "once",
+                0.0
+            ],
+            [
+                "annually",
+                0.33
+            ],
+            [
+                "monthly/quarterly",
+                0.67
+            ],
+            [
+                "daily",
+                1.0
+            ]
+        ],
+        "importance_score": 1.0
+    },
+    {
+        "question_id": "T-0007",
+        "question_text": "Who will use it?",
+        "question_type": "categorical",
+        "answer_options": [
+            [
+                "1 person",
+                0.0
+            ],
+            [
+                "special team",
+                0.33
+            ],
+            [
+                "entire org",
+                0.67
+            ],
+            [
+                "outside org (public)",
+                1.0
+            ]
+        ],
+        "importance_score": 1.0
+    },
+    {
+        "question_id": "T-0008",
+        "question_text": "Where is it used?",
+        "question_type": "categorical",
+        "answer_options": [
+            [
+                "Office/Online",
+                0.0
+            ],
+            [
+                "Field/Offline",
+                1.0
+            ]
+        ],
+        "importance_score": 1.0
+    },
+    {
+        "question_id": "T-0009",
+        "question_text": "Do you have an established way to store data to make it centrally accessible?",
+        "question_type": "categorical",
+        "answer_options": [
+            [
+                "Yes",
+                1.0
+            ],
+            [
+                "No",
+                0.0
+            ]
+        ],
+        "importance_score": 1.0
+    },
+    {
+        "question_id": "T-0010",
+        "question_text": "Do you have IT support already?",
+        "question_type": "categorical",
+        "answer_options": [
+            [
+                "Yes",
+                1.0
+            ],
+            [
+                "No",
+                0.0
+            ]
+        ],
+        "importance_score": 1.0
+    },
+    {
+        "question_id": "T-0011",
+        "question_text": "Does your idea build on an existing tool you use or is it entirely new?",
+        "question_type": "categorical",
+        "answer_options": [
+            [
+                "Yes",
+                1.0
+            ],
+            [
+                "No",
+                0.0
+            ]
+        ],
+        "importance_score": 1.0
+    }
+]

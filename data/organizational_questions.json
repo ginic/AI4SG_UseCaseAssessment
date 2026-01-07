@@ -1,171 +1,20 @@
 {
   "questions": [
-    {
-      "question_id": "O-0001",
-      "question_text": "Do we need to fix it within the next 3 months?",
-      "description": "This question assesses the time criticality of addressing the problem. Consider whether the issue requires a functional solution within the next three months (e.g. to avoid operational disruption, compliance issues, or missed opportunities), or whether it can be addressed as part of a longer-term improvement initiative",
-      "question_type": "categorical",
-      "answer_options": [
-        ["Yes", 1.0],
-        ["No", 0.0]
-      ],
-      "importance_score": 1.0
-    },
-    {
-      "question_id": "O-0002",
-      "question_text": "Is this a business process improvement or mission supporting?",
-      "description": "This question distinguishes whether the problem primarily concerns improving internal operations and workflows (e.g. automating working hours reporting) or directly supporting or expanding the organisation's mission (e.g. monitoring coral reefs using remote sensing for environmental conservation). Consider where the primary value of a potential solution would be realised.",
-      "question_type": "categorical",
-      "answer_options": [
-        ["Process", 0.0],
-        ["Mission", 1.0]
-      ],
-      "importance_score": 1.0
-    },
-    {
-      "question_id": "O-0003",
-      "question_text": "Is there a clear beneficiary or end user?",
-      "description": "This question assesses whether there is a clearly identifiable group or role that will use the solution and benefit from it. Consider whether you can name specific users (e.g. roles, teams, or external groups) who would regularly use the tool and derive clear value from it.",
-      "question_type": "categorical",
-      "answer_options": [
-        ["Yes", 1.0],
-        ["No", 0.0]
-      ],
-      "importance_score": 1.0
-    },
-    {
-      "question_id": "O-0004",
-      "question_text": "How willing is your org to spend $ on tech sol'n?",
-      "description": "This question assesses whether the organisation is willing and able to allocate budget to a technical solution, given competing priorities. Consider whether spending on technology is currently seen as an acceptable and justified use of funds compared to other expenditures more directly tied to the core mandate.",
-      "question_type": "categorical",
-      "answer_options": [
-        ["Yes", 1.0],
-        ["No", 0.0]
-      ],
-      "importance_score": 1.0
-    },
-    {
-      "question_id": "O-0005",
-      "question_text": "Does your org already have an AI policy?",
-      "description": "This question assesses whether there are established organisational policies or guidelines governing the use of AI or advanced digital technologies. Such policies typically address issues like data protection, ethics, risk management, accountability, and procurement, and provide a common framework for decision-making.",
-      "question_type": "categorical",
-      "answer_options": [
-        ["Yes", 1.0],
-        ["No", 0.0]
-      ],
-      "importance_score": 1.0
-    },
-    {
-      "question_id": "O-0006",
-      "question_text": "Attitude within org toward AI?",
-      "question_type": "categorical",
-      "answer_options": [
-        ["Excited", 1.0],
-        ["Neutral", 0.5],
-        ["Negative", 0.0]
-      ],
-      "importance_score": 1.0
-    },
-    {
-      "question_id": "O-0007",
-      "question_text": "Champions/Ambassador: Can you identify an influential person who has flexibility to support efforts/experiments?",
-      "question_type": "categorical",
-      "answer_options": [
-        ["Yes", 1.0],
-        ["No", 0.0]
-      ],
-      "importance_score": 1.0
-    },
-    {
-      "question_id": "O-0008",
-      "question_text": "What are your donors' attitude toward AI?",
-      "question_type": "categorical",
-      "answer_options": [
-        ["Excited", 1.0],
-        ["Neutral", 0.5],
-        ["Negative", 0.0]
-      ],
-      "importance_score": 1.0
-    },
-    {
-      "question_id": "O-0009",
-      "question_text": "Is it mission-critical?",
-      "question_type": "categorical",
-      "answer_options": [
-        ["Yes", 1.0],
-        ["No", 0.0]
-      ],
-      "importance_score": 1.0
-    },
-    {
-      "question_id": "O-0010",
-      "question_text": "Is there a manual redundancy/fallback already?",
-      "question_type": "categorical",
-      "answer_options": [
-        ["Yes", 1.0],
-        ["No", 0.0]
-      ],
-      "importance_score": 1.0
-    },
-    {
-      "question_id": "O-0011",
-      "question_text": "Would a mistake be life-threatening?",
-      "question_type": "categorical",
-      "answer_options": [
-        ["Yes", 1.0],
-        ["No", 0.0]
-      ],
-      "importance_score": 1.0
-    },
-    {
-      "question_id": "O-0012",
-      "question_text": "Would a mistake affect your material/assets?",
-      "question_type": "categorical",
-      "answer_options": [
-        ["Yes", 1.0],
-        ["No", 0.0]
-      ],
-      "importance_score": 1.0
-    },
-    {
-      "question_id": "O-0013",
-      "question_text": "Would a mistake affect your staff?",
-      "question_type": "categorical",
-      "answer_options": [
-        ["Yes", 1.0],
-        ["No", 0.0]
-      ],
-      "importance_score": 1.0
-    },
-    {
-      "question_id": "O-0014",
-      "question_text": "Would a mistake affect customers/beneficiaries/donors?",
-      "question_type": "categorical",
-      "answer_options": [
-        ["Yes", 1.0],
-        ["No", 0.0]
-      ],
-      "importance_score": 1.0
-    },
-    {
-      "question_id": "O-0015",
-      "question_text": "Would a mistake affect your mission/mandate?",
-      "question_type": "categorical",
-      "answer_options": [
-        ["Yes", 1.0],
-        ["No", 0.0]
-      ],
-      "importance_score": 1.0
-    },
-    {
-      "question_id": "O-0016",
-      "question_text": "Would a mistake affect your reputation?",
-      "question_type": "categorical",
-      "answer_options": [
-        ["Yes", 1.0],
-        ["No", 0.0]
-      ],
-      "importance_score": 1.0
-    }
+    "O-0001",
+    "O-0002",
+    "O-0003",
+    "O-0004",
+    "O-0005",
+    "O-0006",
+    "O-0007",
+    "O-0008",
+    "O-0009",
+    "O-0010",
+    "O-0011",
+    "O-0012",
+    "O-0013",
+    "O-0014",
+    "O-0015",
+    "O-0016"
   ]
 }
