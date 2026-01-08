@@ -81,26 +81,38 @@ class QuestionCollection(BaseModel):
     questions: list[Question]
     threshold: list[ThresholdResponse] | None = None
 
-    def calculate_score(self) -> float:
+    def calculate_score(self) -> dict:
         """
         Calculate the overall score based on user responses and importance weights.
 
         Returns:
-            float: Weighted average score, or 0.0 if no responses provided.
+            dict: For score calculations
+            - Weighted average score, or 0.0 if no responses provided.
+            - Total weighted score
+            - Total response score without weights
         """
         total_weighted_score = 0.0
         total_importance = 0.0
+        total_response_score = 0.0
 
         for question in self.questions:
             response_score = question.get_response_score()
             if response_score is not None:
+                total_response_score += response_score
                 total_weighted_score += response_score * question.importance_score
                 total_importance += question.importance_score
 
         if total_importance == 0:
-            return 0.0
+            weighted_average_score = 0.0
+        else:
+            weighted_average_score = total_weighted_score / total_importance
 
-        return total_weighted_score / total_importance
+        return {
+            "weighted_average_score": weighted_average_score,
+            "total_weighted_score": total_weighted_score,
+            "total_response_score": total_response_score
+        }
+
 
     def get_score_response(score: int) -> ThresholdResponse:
         # todo return the proper bucket for the score

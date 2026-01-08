@@ -28,11 +28,14 @@ def main():
             response = render_question_with_help(
                 question=question,
                 key=f"org_q_{question.question_id}_{i}",
-                session_state_key=f"{SESSION_ORGANIZATIONAL_RESPONSES}.{question.question_id}"
+                session_state_key=f"{question.question_id}"
             )
             # Update the question's user_response
             question.user_response = response
+
             st.markdown("---")
+
+        st.session_state[SESSION_ORGANIZATIONAL_RESPONSES] = question_collection
 
     except FileNotFoundError as e:
         st.error(f"Error loading questions: {e}")
