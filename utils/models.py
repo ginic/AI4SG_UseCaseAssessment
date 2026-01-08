@@ -57,6 +57,18 @@ class Question(BaseModel):
         return None
 
 
+class ThresholdResponse(BaseModel):
+    """
+    Categorizes scores into a bucket that will decide what description of their responses
+    will be displayed to the user.
+    The upper and lower bound determine the scoring range that will trigger the response.
+    """
+
+    upper: int = int("inf")
+    lower: int = int("-inf")
+    description: str | None = None
+
+
 class QuestionCollection(BaseModel):
     """
     Represents a collection of questions with scoring logic.
@@ -65,7 +77,9 @@ class QuestionCollection(BaseModel):
     but designed to be extensible for custom weighting strategies.
     """
 
+    header: str | None = None
     questions: list[Question]
+    threshold: list[ThresholdResponse] | None = None
 
     def calculate_score(self) -> float:
         """
@@ -87,3 +101,7 @@ class QuestionCollection(BaseModel):
             return 0.0
 
         return total_weighted_score / total_importance
+
+    def get_score_response(score: int) -> ThresholdResponse:
+        # todo return the proper bucket for the score
+        return
