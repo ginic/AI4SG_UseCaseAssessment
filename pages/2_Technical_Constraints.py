@@ -28,10 +28,12 @@ def main():
             response = render_question_with_help(
                 question=question,
                 key=f"tech_q_{question.question_id}_{i}",
-                session_state_key=f"{SESSION_TECHNICAL_RESPONSES}.{question.question_id}",
+                session_state_key=f"{question.question_id}",
             )
             # Update the question's user_response
             question.user_response = response
+
+            st.session_state[SESSION_TECHNICAL_RESPONSES] = question_collection
             st.markdown("---")
 
     except FileNotFoundError as e:
