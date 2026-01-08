@@ -63,7 +63,7 @@ def load_question_collection(json_file_path: str) -> QuestionCollection:
     with open(file_path, "r") as f:
         data = json.load(f)
 
-    questions_collection = QuestionCollection(**data)
+    questions_collection = QuestionCollection.model_validate(data)
 
     # Build list of Question objects from cache
     for qid in questions_collection.question_ids:

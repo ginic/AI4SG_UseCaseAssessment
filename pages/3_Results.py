@@ -24,7 +24,7 @@ def main():
         #Using raw total response score
         score_bucket = question_collection.get_score_response(collection_score["total_response_score"])
         if score_bucket:
-            st.write(f"Score Results: {score_bucket.description} (total score)")
+            st.write(f"Score Results: {score_bucket.description}")
         else:
             st.write(f"Score is out of bounds. Please check score thresholds")
 
