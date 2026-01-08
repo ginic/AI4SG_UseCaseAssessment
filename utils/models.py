@@ -7,7 +7,6 @@ from typing import Literal, Optional
 
 from pydantic import BaseModel, Field
 
-
 class Question(BaseModel):
     """
     Represents a single assessment question.
@@ -85,7 +84,7 @@ class QuestionCollection(BaseModel):
 
     header: str | None = None
     question_ids: list[str]
-    threshold: list[ThresholdResponse] | None = None
+    thresholds: list[ThresholdResponse] | None = None
 
     def calculate_score(self, question_lookup: dict[str, Question]) -> dict:
         """
@@ -120,6 +119,17 @@ class QuestionCollection(BaseModel):
             "total_response_score": total_response_score,
         }
 
-    def get_score_response(score: int) -> ThresholdResponse:
-        # todo return the proper bucket for the score
-        return
+    def get_score_response(self, score: int) -> ThresholdResponse:
+        if not self.thresholds:
+            return None
+
+        for bucket in self.thresholds:
+            # Check if the score is within the range [lower, upper)
+            # Note: We use <= for upper if you want the bound to be inclusive
+            lower_bound = bucket.lower if bucket.lower is not None else -math.inf
+            upper_bound = bucket.upper if bucket.upper is not None else math.inf
+
+            if lower_bound <= score < upper_bound:
+                return bucket
+
+        return None

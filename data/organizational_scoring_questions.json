@@ -18,5 +18,9 @@
         "O-0015",
         "O-0016"
     ],
-    "thresholds": []
+    "thresholds": [
+        {"upper": -5, "description": "Large project"},
+        {"lower": -5, "upper":10, "description": "Moderately sized project"},
+        {"lower":10, "description": "Small project"}
+    ]
 }
