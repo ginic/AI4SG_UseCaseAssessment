@@ -6,8 +6,8 @@
             "description": "This question assesses the time criticality of addressing the problem. Consider whether the issue requires a functional solution within the next three months (e.g. to avoid operational disruption, compliance issues, or missed opportunities), or whether it can be addressed as part of a longer-term improvement initiative",
             "question_type": "categorical",
             "answer_options": [
-                ["Yes", 1.0],
-                ["No", 0.0]
+                ["Yes", -1.0],
+                ["No", 1.0]
             ],
             "importance_score": 1.0
         },
@@ -17,10 +17,10 @@
             "description": "This question assesses the organisation’s realistic expectation for when a first usable version of the solution can deliver value.",
             "question_type": "categorical",
             "answer_options": [
-                ["3 Months", 1.0],
-                ["6 Months", 0.67],
-                ["1 Year", 0.33],
-                ["2 Years", 0.0]
+                ["3 Months", -1.0],
+                ["6 Months", 0.0],
+                ["1 Year", 1.0],
+                ["2 Years", 1.0]
             ],
             "importance_score": 1.0
         },
@@ -31,7 +31,7 @@
             "question_type": "categorical",
             "answer_options": [
                 ["Process", 0.0],
-                ["Mission", 1.0]
+                ["Mission", -1.0]
             ],
             "importance_score": 1.0
         },
@@ -42,7 +42,7 @@
             "question_type": "categorical",
             "answer_options": [
                 ["Yes", 1.0],
-                ["No", 0.0]
+                ["No", -1.0]
             ],
             "importance_score": 1.0
         },
@@ -64,8 +64,8 @@
             "question_type": "categorical",
             "answer_options": [
                 ["Excited", 1.0],
-                ["Neutral", 0.5],
-                ["Negative", 0.0]
+                ["Neutral", 0.0],
+                ["Negative", -1.0]
             ],
             "importance_score": 1.0
         },
@@ -76,7 +76,7 @@
             "question_type": "categorical",
             "answer_options": [
                 ["Yes", 1.0],
-                ["No", 0.0]
+                ["No", -1.0]
             ],
             "importance_score": 1.0
         },
@@ -86,15 +86,95 @@
             "description": "Identifies the data formats that the system will actively process, analyse, or manipulate.",
             "question_type": "categorical",
             "answer_options": [
-                ["Text", 0.0],
-                ["Audio", 0.125],
-                ["Images", 0.25],
-                ["Spreadsheets", 0.375],
-                ["Tabular/Structured DB", 0.5],
-                ["Geospatial", 0.625],
-                ["Video", 0.75],
-                ["Combination", 0.875],
-                ["Multimodal/Mix", 1.0]
+                ["Text", 1.0],
+                ["Audio", 0.0],
+                ["Images", -1.0],
+                ["Spreadsheets", 1.0],
+                ["Tabular/Structured Database", 1.0],
+                ["Geospatial", 0.0],
+                ["Video", -1],
+                ["Combination", -1.0]
+            ],
+            "importance_score": 1.0
+        },
+        {
+            "question_id": "T-0004",
+            "question_text": "What is the expected quantity of data used in your system?",
+            "description": "This question assesses the scale of data the system is expected to process, analyse, or store. Larger volumes often lead to higher computational cost and infrastructure needs.",
+            "question_type": "categorical",
+            "answer_options": [
+                ["Small (< 100 files/records)", 1.0],
+                ["Medium (~ 1000 files/records)", 0.0],
+                ["Large (>1TB)", -1.0]
+            ],
+            "importance_score": 1.0
+        },
+        {
+            "question_id": "T-0005",
+            "question_text": "What frequency of use do you foresee for the system?",
+            "description": "Assesses how often the system is expected to be actively used. Systems used more frequently place higher demands on reliability and maintenance.",
+            "question_type": "categorical",
+            "answer_options": [
+                ["real-time", -1.0],
+                ["daily/weekly", 1.0],
+                ["monthly/quarterly", 1.0],
+                ["annually", 0.0],
+                ["once", -1.0]
+            ],
+            "importance_score": 1.0
+        },
+        {
+            "question_id": "T-0006",
+            "question_text": "Are you able to define the scope of the project very precisely?",
+            "description": "A well-defined scope reduces uncertainty and implementation risk. Assesses if objectives and success criteria are unlikely to change.",
+            "question_type": "categorical",
+            "answer_options": [
+                ["Yes", 1.0],
+                ["No", 0.0]
+            ],
+            "importance_score": 1.0
+        },
+        {
+            "question_id": "T-0007",
+            "question_text": "Can you list in detail the exact tasks the system will fulfil?",
+            "description": "Being able to list concrete tasks helps translate needs into requirements and reduces ambiguity during implementation.",
+            "question_type": "categorical",
+            "answer_options": [
+                ["Yes", 1.0],
+                ["No", 0.0]
+            ],
+            "importance_score": 1.0
+        },
+        {
+            "question_id": "T-0008",
+            "question_text": "Can you clearly distinguish between core functionality and nice-to-have features?",
+            "description": "Assesses whether the organisation has a clear understanding of the system’s core functions.",
+            "question_type": "categorical",
+            "answer_options": [
+                ["Yes", 1.0],
+                ["No", 0.0]
+            ],
+            "importance_score": 1.0
+        },
+        {
+            "question_id": "T-0009",
+            "question_text": "If you would only implement core functionality to have a minimal viable product?",
+            "description": "Assesses whether delivering only core functions would already provide meaningful value.",
+            "question_type": "categorical",
+            "answer_options": [
+                ["Yes", 1.0],
+                ["No", 0.0]
+            ],
+            "importance_score": 1.0
+        },
+        {
+            "question_id": "T-0010",
+            "question_text": "Will the project be outward-facing? (e.g. a digital service for partners or costumers)",
+            "description": "Outward-facing systems typically require higher standards for reliability, security, and governance.",
+            "question_type": "categorical",
+            "answer_options": [
+                ["Yes", -1.0],
+                ["No", 0.0]
             ],
             "importance_score": 1.0
         },
@@ -104,8 +184,74 @@
             "description": "Assesses the physical and organisational context in which the system will be used.",
             "question_type": "categorical",
             "answer_options": [
-                ["Office/Online", 0.0],
-                ["Field/Offline", 1.0]
+                ["Office/Online", 1.0],
+                ["Field/Offline", -1.0]
+            ],
+            "importance_score": 1.0
+        },
+        {
+            "question_id": "T-0012",
+            "question_text": "Will the system need to function with limited or no internet connectivity?",
+            "description": "Connectivity constraints have major implications for system architecture, data synchronisation, complexity, and maintenance.",
+            "question_type": "categorical",
+            "answer_options": [
+                ["Yes", -1.0],
+                ["No", 1.0]
+            ],
+            "importance_score": 1.0
+        },
+        {
+            "question_id": "T-0013",
+            "question_text": "Do you have an established way to store data to make it centrally accessible?",
+            "description": "Central data storage is a prerequisite for collaboration, automation, version control, security, and long-term sustainability.",
+            "question_type": "categorical",
+            "answer_options": [
+                ["Yes", 1.0],
+                ["No", 0.0]
+            ],
+            "importance_score": 1.0
+        },
+        {
+            "question_id": "T-0014",
+            "question_text": "Do you have IT support already?",
+            "description": "Assesses whether the organisation has a basic, established IT contact, role, or unit responsible for IT systems and infrastructure.",
+            "question_type": "categorical",
+            "answer_options": [
+                ["Yes", 1.0],
+                ["No", 0.0]
+            ],
+            "importance_score": 1.0
+        },
+        {
+            "question_id": "T-0015",
+            "question_text": "Is your IT support capable of running and maintaining the system?",
+            "description": "Assesses whether existing IT support has the practical capacity and skills for routine operation, updates, and security.",
+            "question_type": "categorical",
+            "answer_options": [
+                ["Yes", 1.0],
+                ["No", -1.0]
+            ],
+            "importance_score": 1.0
+        },
+        {
+            "question_id": "T-0016",
+            "question_text": "Does your idea build on an existing tool you use or is it entirely new?",
+            "description": "Assesses user adoption and change management. Extending familiar tools often simplifies the transition for users.",
+            "question_type": "categorical",
+            "answer_options": [
+                ["Yes", 1.0],
+                ["No", 0.0]
+            ],
+            "importance_score": 1.0
+        },
+        {
+            "question_id": "T-0017",
+            "question_text": "Will the system require system integration in the existing tech infrastructure?",
+            "description": "Focuses on technical dependencies such as data exchange or shared authentication with existing systems.",
+            "question_type": "categorical",
+            "answer_options": [
+                ["Yes", -1.0],
+                ["No", 0.0]
             ],
             "importance_score": 1.0
         }
