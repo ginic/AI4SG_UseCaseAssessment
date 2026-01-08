@@ -203,6 +203,17 @@
             "importance_score": 1.0
         },
         {
+            "question_id": "T-0002",
+            "question_text": "Do you know how to collect data in future for the system if necessary?",
+            "description": "This question assesses whether there is a clear and feasible plan to obtain any additional data required by the system in the future. Consider internal processes, partnerships, sensors, surveys, or data purchases.",
+            "question_type": "categorical",
+            "answer_options": [
+                ["Yes", 1.0],
+                ["No", 0.0]
+            ],
+            "importance_score": 1.0
+        },
+        {
             "question_id": "T-0003",
             "question_text": "What data formats will be used in the system?",
             "description": "Identifies the data formats that the system will actively process, analyse, or manipulate.",
