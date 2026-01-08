@@ -6,494 +6,385 @@
             "description": "This question assesses the time criticality of addressing the problem. Consider whether the issue requires a functional solution within the next three months (e.g. to avoid operational disruption, compliance issues, or missed opportunities), or whether it can be addressed as part of a longer-term improvement initiative",
             "question_type": "categorical",
             "answer_options": [
-                [
-                    "Yes",
-                    1.0
-                ],
-                [
-                    "No",
-                    0.0
-                ]
+                ["Yes", -1.0],
+                ["No", 1.0]
             ],
             "importance_score": 1.0
         },
         {
             "question_id": "O-0002",
-            "question_text": "Is this a business process improvement or mission supporting?",
-            "description": "This question distinguishes whether the problem primarily concerns improving internal operations and workflows (e.g. automating working hours reporting) or directly supporting or expanding the organisation's mission (e.g. monitoring coral reefs using remote sensing for environmental conservation). Consider where the primary value of a potential solution would be realised.",
+            "question_text": "What is the earliest realistic timeframe to deliver usable value?",
+            "description": "This question assesses the organisation’s realistic expectation for when a first usable version of the solution can deliver value.",
             "question_type": "categorical",
             "answer_options": [
-                [
-                    "Process",
-                    0.0
-                ],
-                [
-                    "Mission",
-                    1.0
-                ]
+                ["3 Months", -1.0],
+                ["6 Months", 0.0],
+                ["1 Year", 1.0],
+                ["2 Years", 1.0]
             ],
             "importance_score": 1.0
         },
         {
             "question_id": "O-0003",
-            "question_text": "Is there a clear beneficiary or end user?",
-            "description": "This question assesses whether there is a clearly identifiable group or role that will use the solution and benefit from it. Consider whether you can name specific users (e.g. roles, teams, or external groups) who would regularly use the tool and derive clear value from it.",
+            "question_text": "Is this a business process improvement or mission supporting?",
+            "description": "This question distinguishes whether the problem primarily concerns improving internal operations and workflows or directly supporting the mission.",
             "question_type": "categorical",
             "answer_options": [
-                [
-                    "Yes",
-                    1.0
-                ],
-                [
-                    "No",
-                    0.0
-                ]
+                ["Process", 0.0],
+                ["Mission", -1.0]
             ],
             "importance_score": 1.0
         },
         {
             "question_id": "O-0004",
-            "question_text": "How willing is your org to spend $ on tech sol'n?",
-            "description": "This question assesses whether the organisation is willing and able to allocate budget to a technical solution, given competing priorities. Consider whether spending on technology is currently seen as an acceptable and justified use of funds compared to other expenditures more directly tied to the core mandate.",
+            "question_text": "Is there a clear beneficiary or end user?",
+            "description": "This question assesses whether there is a clearly identifiable group or role that will use the solution and benefit from it.",
             "question_type": "categorical",
             "answer_options": [
-                [
-                    "Yes",
-                    1.0
-                ],
-                [
-                    "No",
-                    0.0
-                ]
+                ["Yes", 1.0],
+                ["No", -1.0]
             ],
             "importance_score": 1.0
         },
         {
             "question_id": "O-0005",
-            "question_text": "Does your org already have an AI policy?",
-            "description": "This question assesses whether there are established organisational policies or guidelines governing the use of AI or advanced digital technologies. Such policies typically address issues like data protection, ethics, risk management, accountability, and procurement, and provide a common framework for decision-making.",
+            "question_text": "How willing is your org to spend money on a tech solution?",
+            "description": "Assesses whether the organisation is willing and able to allocate budget to a technical solution.",
             "question_type": "categorical",
             "answer_options": [
-                [
-                    "Yes",
-                    1.0
-                ],
-                [
-                    "No",
-                    0.0
-                ]
+                ["Yes", 1.0],
+                ["No", 0.0]
             ],
             "importance_score": 1.0
         },
         {
             "question_id": "O-0006",
-            "question_text": "Attitude within org toward AI?",
+            "question_text": "Does your org already have an AI policy?",
+            "description": "This question assesses whether there are established organisational policies or guidelines governing the use of AI. Such policies provide a common framework for decision-making regarding ethics, risk, and procurement.",
             "question_type": "categorical",
             "answer_options": [
-                [
-                    "Excited",
-                    1.0
-                ],
-                [
-                    "Neutral",
-                    0.5
-                ],
-                [
-                    "Negative",
-                    0.0
-                ]
+                ["Yes", 1.0],
+                ["No", 0.0]
             ],
             "importance_score": 1.0
         },
         {
             "question_id": "O-0007",
-            "question_text": "Champions/Ambassador: Can you identify an influential person who has flexibility to support efforts/experiments?",
+            "question_text": "Attitude within org toward AI?",
+            "description": "Assesses the overall organisational attitude toward AI and advanced technologies.",
             "question_type": "categorical",
             "answer_options": [
-                [
-                    "Yes",
-                    1.0
-                ],
-                [
-                    "No",
-                    0.0
-                ]
+                ["Excited", 1.0],
+                ["Neutral", 0.0],
+                ["Negative", -1.0]
             ],
             "importance_score": 1.0
         },
         {
             "question_id": "O-0008",
-            "question_text": "What are your donors' attitude toward AI?",
+            "question_text": "Champions/Ambassador: Can you identify an influential person who has the flexibility to support efforts/experiments?",
+            "description": "Assesses whether there is at least one person with the mandate, credibility, and decision-making power to actively support and drive experimentation or implementation.",
             "question_type": "categorical",
             "answer_options": [
-                [
-                    "Excited",
-                    1.0
-                ],
-                [
-                    "Neutral",
-                    0.5
-                ],
-                [
-                    "Negative",
-                    0.0
-                ]
+                ["Yes", 1.0],
+                ["No", 0.0]
             ],
             "importance_score": 1.0
         },
         {
             "question_id": "O-0009",
-            "question_text": "Is it mission-critical?",
+            "question_text": "What are your donors' attitude toward AI?",
+            "description": "Assesses how key donors or funders are likely to perceive investments in AI. Consider past interactions and funding conditions to estimate support or reputational risk.",
             "question_type": "categorical",
             "answer_options": [
-                [
-                    "Yes",
-                    1.0
-                ],
-                [
-                    "No",
-                    0.0
-                ]
+                ["Excited", 1.0],
+                ["Neutral", 0.0],
+                ["Negative", -1.0]
             ],
             "importance_score": 1.0
         },
         {
             "question_id": "O-0010",
-            "question_text": "Is there a manual redundancy/fallback already?",
+            "question_text": "Is it mission-critical?",
+            "description": "Determines if the problem being addressed is central to the organization's primary goals.",
             "question_type": "categorical",
             "answer_options": [
-                [
-                    "Yes",
-                    1.0
-                ],
-                [
-                    "No",
-                    0.0
-                ]
+                ["Yes", -1.0],
+                ["No", 0.0]
             ],
             "importance_score": 1.0
         },
         {
             "question_id": "O-0011",
-            "question_text": "Would a mistake be life-threatening?",
+            "question_text": "Is there a manual redundancy/fallback already?",
+            "description": "Assesses if a non-technical process exists that can be used if the system is unavailable or produces unreliable results.",
             "question_type": "categorical",
             "answer_options": [
-                [
-                    "Yes",
-                    1.0
-                ],
-                [
-                    "No",
-                    0.0
-                ]
+                ["Yes", 1.0],
+                ["No", -1.0]
             ],
             "importance_score": 1.0
         },
         {
             "question_id": "O-0012",
-            "question_text": "Would a mistake affect your material/assets?",
+            "question_text": "Would a mistake be life-threatening?",
+            "description": "Assesses whether failure or incorrect behavior could directly lead to loss of life. Consider worst-case scenarios.",
             "question_type": "categorical",
             "answer_options": [
-                [
-                    "Yes",
-                    1.0
-                ],
-                [
-                    "No",
-                    0.0
-                ]
+                ["Yes", -1.0],
+                ["No", 1.0]
             ],
             "importance_score": 1.0
         },
         {
             "question_id": "O-0013",
-            "question_text": "Would a mistake affect your staff?",
+            "question_text": "Would a mistake of the system affect your material/assets?",
+            "description": "Assesses whether system failure would place the organization’s physical or core mission-related assets at risk.",
             "question_type": "categorical",
             "answer_options": [
-                [
-                    "Yes",
-                    1.0
-                ],
-                [
-                    "No",
-                    0.0
-                ]
+                ["Yes", -1.0],
+                ["No", 1.0]
             ],
             "importance_score": 1.0
         },
         {
             "question_id": "O-0014",
-            "question_text": "Would a mistake affect customers/beneficiaries/donors?",
+            "question_text": "Would a mistake of the system affect your staff?",
+            "description": "Consider physical, psychological, legal, or workload-related impacts on staff due to errors or system failure.",
             "question_type": "categorical",
             "answer_options": [
-                [
-                    "Yes",
-                    1.0
-                ],
-                [
-                    "No",
-                    0.0
-                ]
+                ["Yes", -1.0],
+                ["No", 1.0]
             ],
             "importance_score": 1.0
         },
         {
             "question_id": "O-0015",
-            "question_text": "Would a mistake affect your mission/mandate?",
+            "question_text": "Would a mistake of the system affect customers/beneficiaries/donors?",
+            "description": "Assesses negative impacts such as reduced service quality, loss of trust, or unmet expectations for external stakeholders.",
             "question_type": "categorical",
             "answer_options": [
-                [
-                    "Yes",
-                    1.0
-                ],
-                [
-                    "No",
-                    0.0
-                ]
+                ["Yes", -1.0],
+                ["No", 1.0]
             ],
             "importance_score": 1.0
         },
         {
             "question_id": "O-0016",
-            "question_text": "Would a mistake affect your reputation?",
+            "question_text": "Would a mistake affect of your system your mission/mandate?",
+            "description": "Assesses whether system failure could undermine a specific operation or project that contributes to the organization's mission.",
             "question_type": "categorical",
             "answer_options": [
-                [
-                    "Yes",
-                    1.0
-                ],
-                [
-                    "No",
-                    0.0
-                ]
+                ["Yes", -1.0],
+                ["No", 1.0]
+            ],
+            "importance_score": 1.0
+        },
+        {
+            "question_id": "O-0017",
+            "question_text": "Would a mistake of the system affect your reputation?",
+            "description": "Assesses whether errors or failure could lead to reputational damage or loss of trust among external stakeholders and the public.",
+            "question_type": "categorical",
+            "answer_options": [
+                ["Yes", -1.0],
+                ["No", 1.0]
             ],
             "importance_score": 1.0
         },
         {
             "question_id": "T-0001",
-            "question_text": "Do we already have data around problem?",
+            "question_text": "Do you already have the data the system will use?",
+            "description": "Assesses whether the datasets required by the system are already available in a machine-readable format.",
             "question_type": "categorical",
             "answer_options": [
-                [
-                    "Yes",
-                    1.0
-                ],
-                [
-                    "No",
-                    0.0
-                ]
+                ["Yes", 1.0],
+                ["No", -1.0]
             ],
             "importance_score": 1.0
         },
         {
             "question_id": "T-0002",
-            "question_text": "Do we know how to collect data in future?",
+            "question_text": "Do you know how to collect data in future for the system if necessary?",
+            "description": "This question assesses whether there is a clear and feasible plan to obtain any additional data required by the system in the future. Consider internal processes, partnerships, sensors, surveys, or data purchases.",
             "question_type": "categorical",
             "answer_options": [
-                [
-                    "Yes",
-                    1.0
-                ],
-                [
-                    "No",
-                    0.0
-                ]
+                ["Yes", 1.0],
+                ["No", 0.0]
             ],
             "importance_score": 1.0
         },
         {
             "question_id": "T-0003",
-            "question_text": "Does your data include sensitive personal information?",
+            "question_text": "What data formats will be used in the system?",
+            "description": "Identifies the data formats that the system will actively process, analyse, or manipulate.",
             "question_type": "categorical",
             "answer_options": [
-                [
-                    "Yes",
-                    1.0
-                ],
-                [
-                    "No",
-                    0.0
-                ]
+                ["Text", 1.0],
+                ["Audio", 0.0],
+                ["Images", -1.0],
+                ["Spreadsheets", 1.0],
+                ["Tabular/Structured Database", 1.0],
+                ["Geospatial", 0.0],
+                ["Video", -1],
+                ["Combination", -1.0]
             ],
             "importance_score": 1.0
         },
         {
             "question_id": "T-0004",
-            "question_text": "Data format",
+            "question_text": "What is the expected quantity of data used in your system?",
+            "description": "This question assesses the scale of data the system is expected to process, analyse, or store. Larger volumes often lead to higher computational cost and infrastructure needs.",
             "question_type": "categorical",
             "answer_options": [
-                [
-                    "Text",
-                    0.0
-                ],
-                [
-                    "Audio",
-                    0.125
-                ],
-                [
-                    "Images",
-                    0.25
-                ],
-                [
-                    "Spreadsheets",
-                    0.375
-                ],
-                [
-                    "Tabular/Structured DB",
-                    0.5
-                ],
-                [
-                    "Geospatial",
-                    0.625
-                ],
-                [
-                    "Video",
-                    0.75
-                ],
-                [
-                    "Combination",
-                    0.875
-                ],
-                [
-                    "Multimodal/Mix (Social Media)",
-                    1.0
-                ]
+                ["Small (< 100 files/records)", 1.0],
+                ["Medium (~ 1000 files/records)", 0.0],
+                ["Large (>1TB)", -1.0]
             ],
             "importance_score": 1.0
         },
         {
             "question_id": "T-0005",
-            "question_text": "Quantity of data",
+            "question_text": "What frequency of use do you foresee for the system?",
+            "description": "Assesses how often the system is expected to be actively used. Systems used more frequently place higher demands on reliability and maintenance.",
             "question_type": "categorical",
             "answer_options": [
-                [
-                    "< 100 files/records",
-                    0.0
-                ],
-                [
-                    "100-1000 files/records",
-                    0.33
-                ],
-                [
-                    "1000-10000 files/records",
-                    0.67
-                ],
-                [
-                    "> 10000 files/records",
-                    1.0
-                ]
+                ["real-time", -1.0],
+                ["daily/weekly", 1.0],
+                ["monthly/quarterly", 1.0],
+                ["annually", 0.0],
+                ["once", -1.0]
             ],
             "importance_score": 1.0
         },
         {
             "question_id": "T-0006",
-            "question_text": "Frequency of use",
+            "question_text": "Are you able to define the scope of the project very precisely?",
+            "description": "A well-defined scope reduces uncertainty and implementation risk. Assesses if objectives and success criteria are unlikely to change.",
             "question_type": "categorical",
             "answer_options": [
-                [
-                    "once",
-                    0.0
-                ],
-                [
-                    "annually",
-                    0.33
-                ],
-                [
-                    "monthly/quarterly",
-                    0.67
-                ],
-                [
-                    "daily",
-                    1.0
-                ]
+                ["Yes", 1.0],
+                ["No", 0.0]
             ],
             "importance_score": 1.0
         },
         {
             "question_id": "T-0007",
-            "question_text": "Who will use it?",
+            "question_text": "Can you list in detail the exact tasks the system will fulfil?",
+            "description": "Being able to list concrete tasks helps translate needs into requirements and reduces ambiguity during implementation.",
             "question_type": "categorical",
             "answer_options": [
-                [
-                    "1 person",
-                    0.0
-                ],
-                [
-                    "special team",
-                    0.33
-                ],
-                [
-                    "entire org",
-                    0.67
-                ],
-                [
-                    "outside org (public)",
-                    1.0
-                ]
+                ["Yes", 1.0],
+                ["No", 0.0]
             ],
             "importance_score": 1.0
         },
         {
             "question_id": "T-0008",
-            "question_text": "Where is it used?",
+            "question_text": "Can you clearly distinguish between core functionality and nice-to-have features?",
+            "description": "Assesses whether the organisation has a clear understanding of the system’s core functions.",
             "question_type": "categorical",
             "answer_options": [
-                [
-                    "Office/Online",
-                    0.0
-                ],
-                [
-                    "Field/Offline",
-                    1.0
-                ]
+                ["Yes", 1.0],
+                ["No", 0.0]
             ],
             "importance_score": 1.0
         },
         {
             "question_id": "T-0009",
-            "question_text": "Do you have an established way to store data to make it centrally accessible?",
+            "question_text": "If you would only implement core functionality to have a minimal viable product?",
+            "description": "Assesses whether delivering only core functions would already provide meaningful value.",
             "question_type": "categorical",
             "answer_options": [
-                [
-                    "Yes",
-                    1.0
-                ],
-                [
-                    "No",
-                    0.0
-                ]
+                ["Yes", 1.0],
+                ["No", 0.0]
             ],
             "importance_score": 1.0
         },
         {
             "question_id": "T-0010",
-            "question_text": "Do you have IT support already?",
+            "question_text": "Will the project be outward-facing? (e.g. a digital service for partners or costumers)",
+            "description": "Outward-facing systems typically require higher standards for reliability, security, and governance.",
             "question_type": "categorical",
             "answer_options": [
-                [
-                    "Yes",
-                    1.0
-                ],
-                [
-                    "No",
-                    0.0
-                ]
+                ["Yes", -1.0],
+                ["No", 0.0]
             ],
             "importance_score": 1.0
         },
         {
             "question_id": "T-0011",
-            "question_text": "Does your idea build on an existing tool you use or is it entirely new?",
+            "question_text": "Where will the system primarily be used?",
+            "description": "Assesses the physical and organisational context in which the system will be used.",
             "question_type": "categorical",
             "answer_options": [
-                [
-                    "Yes",
-                    1.0
-                ],
-                [
-                    "No",
-                    0.0
-                ]
+                ["Office/Online", 1.0],
+                ["Field/Offline", -1.0]
+            ],
+            "importance_score": 1.0
+        },
+        {
+            "question_id": "T-0012",
+            "question_text": "Will the system need to function with limited or no internet connectivity?",
+            "description": "Connectivity constraints have major implications for system architecture, data synchronisation, complexity, and maintenance.",
+            "question_type": "categorical",
+            "answer_options": [
+                ["Yes", -1.0],
+                ["No", 1.0]
+            ],
+            "importance_score": 1.0
+        },
+        {
+            "question_id": "T-0013",
+            "question_text": "Do you have an established way to store data to make it centrally accessible?",
+            "description": "Central data storage is a prerequisite for collaboration, automation, version control, security, and long-term sustainability.",
+            "question_type": "categorical",
+            "answer_options": [
+                ["Yes", 1.0],
+                ["No", 0.0]
+            ],
+            "importance_score": 1.0
+        },
+        {
+            "question_id": "T-0014",
+            "question_text": "Do you have IT support already?",
+            "description": "Assesses whether the organisation has a basic, established IT contact, role, or unit responsible for IT systems and infrastructure.",
+            "question_type": "categorical",
+            "answer_options": [
+                ["Yes", 1.0],
+                ["No", 0.0]
+            ],
+            "importance_score": 1.0
+        },
+        {
+            "question_id": "T-0015",
+            "question_text": "Is your IT support capable of running and maintaining the system?",
+            "description": "Assesses whether existing IT support has the practical capacity and skills for routine operation, updates, and security.",
+            "question_type": "categorical",
+            "answer_options": [
+                ["Yes", 1.0],
+                ["No", -1.0]
+            ],
+            "importance_score": 1.0
+        },
+        {
+            "question_id": "T-0016",
+            "question_text": "Does your idea build on an existing tool you use or is it entirely new?",
+            "description": "Assesses user adoption and change management. Extending familiar tools often simplifies the transition for users.",
+            "question_type": "categorical",
+            "answer_options": [
+                ["Yes", 1.0],
+                ["No", 0.0]
+            ],
+            "importance_score": 1.0
+        },
+        {
+            "question_id": "T-0017",
+            "question_text": "Will the system require system integration in the existing tech infrastructure?",
+            "description": "Focuses on technical dependencies such as data exchange or shared authentication with existing systems.",
+            "question_type": "categorical",
+            "answer_options": [
+                ["Yes", -1.0],
+                ["No", 0.0]
             ],
             "importance_score": 1.0
         }
