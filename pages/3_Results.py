@@ -11,6 +11,7 @@ from utils.navigation import add_navigation_buttons
 if st.session_state.get("questions") is None:
     st.switch_page("Introduction.py")
 
+
 def main():
     st.title("Assessment Results")
     st.write("Summary of your assessment and recommendations for your AI/ML project.")
@@ -34,7 +35,6 @@ def main():
 
         # Show detailed breakdown
         with st.expander("Show detailed scoring breakdown"):
-            st.write(question_collection.header)
             for qid in question_collection.question_ids:
                 q = st.session_state[QUESTIONS_CACHE_KEY][qid]
                 st.write(f"{q.question_text}")
