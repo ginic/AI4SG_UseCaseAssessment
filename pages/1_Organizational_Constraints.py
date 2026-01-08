@@ -33,8 +33,9 @@ def main():
             # Update the question's user_response
             question.user_response = response
 
-            st.session_state[SESSION_ORGANIZATIONAL_RESPONSES] = question_collection
             st.markdown("---")
+
+        st.session_state[SESSION_ORGANIZATIONAL_RESPONSES] = question_collection
 
     except FileNotFoundError as e:
         st.error(f"Error loading questions: {e}")

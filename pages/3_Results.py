@@ -17,9 +17,12 @@ def main():
 
     else:
         # Fetch questions from state
-        st.write(st.session_state[SESSION_ORGANIZATIONAL_RESPONSES])
+        #st.write(st.session_state[SESSION_ORGANIZATIONAL_RESPONSES])
         org_question_collection = st.session_state[SESSION_ORGANIZATIONAL_RESPONSES]
         tech_question_collection = st.session_state[SESSION_TECHNICAL_RESPONSES]
+
+        # question_collection = st.session_state[SESSION_RESPONSES]
+
         # TODO: Ambition questions
         # ambition_questions = load_questions(str(AMBITION_SCORING_PATH))
 
