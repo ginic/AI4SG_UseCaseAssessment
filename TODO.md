@@ -1,2 +1,3 @@
-[ ] Break up question display and scoring functions into different collections
-[ ] Want to add a result that gives an estimate of how big the project that uses answers from specific questions in both technical and org sections
+- [x] Break up question display and scoring functions into different collections
+- [x] Want to add a result that gives an estimate of how big the project that uses answers from specific questions in both technical and org sections
+- [ ] Add option to answer "I don't know" (contributes negatively to the score)

@@ -2,8 +2,9 @@
     "header": "Estimated Ambition of Project Scope",
     "question_ids": ["O-0001", "O-0004", "T-0005", "T-0006", "T-0011"],
     "thresholds": [
-        {"upper": -5, "description": "Large project"},
-        {"lower": -5, "upper":10, "description": "Moderately sized project"},
-        {"lower":10, "description": "Small project"}
+        {"upper": -5, "header": "Large-sized project", "description": "Based on the demands of time constraints and challenging data formats, this project seems large and fairly complex technically. Plan to invest significant resources for it to be successful.", "color": "violet"},
+        {"lower": -5, "upper":10, "header": "Medium-sized project", "description": "Based on the demands of time constraints and data formats, this project seems moderately ambitious. Plan to invest significant resources for it to be successful.", "color":"yellow"},
+        {"lower":10, "header": "Small-sized project", "description": "Based on the demands of time constraints and data formats, this project seems smaller in scope. A small team should be able to complete it with sufficient time and access to technical resources.", "color": "green"
+        }
     ]
 }
