@@ -10,7 +10,8 @@ PAGES = [
     {"name": "Introduction", "path": "Introduction.py"},
     {"name": "Organizational Constraints", "path": "pages/1_Organizational_Constraints.py"},
     {"name": "Technical Constraints", "path": "pages/2_Technical_Constraints.py"},
-    {"name": "Results", "path": "pages/3_Results.py"},
+    {"name": "Legal Constraints", "path": "pages/3_Legal_Constraints.py"},
+    {"name": "Results", "path": "pages/4_Results.py"},
 ]
 
 

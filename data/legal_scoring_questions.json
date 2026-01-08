@@ -10,8 +10,8 @@
     "L-0007"
   ],
   "thresholds": [
-        {"upper": -5, "description": "Large project"},
-        {"lower": -5, "upper":10, "description": "Moderately sized project"},
-        {"lower":10, "description": "Small project"}
+    {"upper": -5, "header": "Review organizational readiness", "description": "You may face a lot of organizational friction when tackling this project. We recommend building trust within your organization to establish priorities and innovation processes.", "color": "red"},
+    {"lower": -5, "upper":10, "header": "Some organizational friction", "description": "Your organization seems somewhat supportive of beginning this project, but you may face some challenges, uncertainty, or lack of support. We recommend discussing the project more within your organization to further solidify buy-in."},
+    {"lower":10, "upper": 20, "header": "Strong organizational support", "description": "Your organization seems to have clear ideas about their priorities and strong innovation processes in place. This should help you navigate planning and implementing the project smoothly.", "color": "red"}
   ]
 }
