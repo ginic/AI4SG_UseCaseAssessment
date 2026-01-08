@@ -13,5 +13,9 @@
     "T-0010",
     "T-0011"
   ],
-  "thresholds": []
+  "thresholds": [
+        {"upper": -5, "description": "Large project"},
+        {"lower": -5, "upper":10, "description": "Moderately sized project"},
+        {"lower":10, "description": "Small project"}
+  ]
 }
