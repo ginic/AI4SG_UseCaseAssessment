@@ -69,3 +69,4 @@ def question_interaction_section(question_collection_path):
     for qid in question_collection.question_ids:
         response = render_question_with_help(qid)
         st.session_state[QUESTIONS_CACHE_KEY][qid].user_response = response
+        st.markdown("---")

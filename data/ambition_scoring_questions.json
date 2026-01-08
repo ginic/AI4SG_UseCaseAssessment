@@ -3,7 +3,7 @@
     "question_ids": ["O-0001", "O-0004", "T-0005", "T-0006", "T-0011"],
     "thresholds": [
         {"upper": -5, "description": "Large project"},
-        {"lower": -5, "upper":10, "description": "Moderately sized project"}
+        {"lower": -5, "upper":10, "description": "Moderately sized project"},
         {"lower":10, "description": "Small project"}
     ]
 }
