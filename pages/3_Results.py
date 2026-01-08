@@ -28,10 +28,18 @@ def main():
     org_score = org_questions.calculate_score()
     tech_score = tech_questions.calculate_score()
 
+    org_weighted_avg_score = org_score["weighted_average_score"]
+    tech_weighted_avg_score = tech_score["weighted_average_score"]
+
+    org_response_score = org_score["total_response_score"]
+    tech_response_score = tech_score["total_response_score"]
+
     st.subheader("Organizational Score")
-    st.write(f"{org_score:.2f} (weighted average)")
+    st.write(f"{org_weighted_avg_score:.2f} (weighted average)")
+    st.write(f"{org_response_score:.2f} (total score)")
     st.subheader("Technical Score")
-    st.write(f"{tech_score:.2f} (weighted average)")
+    st.write(f"{tech_weighted_avg_score:.2f} (weighted average)")
+    st.write(f"{tech_response_score:.2f} (total score)")
 
     # Show detailed breakdown
     with st.expander("Show detailed scoring breakdown"):
