@@ -58,6 +58,17 @@
             "importance_score": 1.0
         },
         {
+            "question_id": "O-0006",
+            "question_text": "Does your org already have an AI policy?",
+            "description": "This question assesses whether there are established organisational policies or guidelines governing the use of AI. Such policies provide a common framework for decision-making regarding ethics, risk, and procurement.",
+            "question_type": "categorical",
+            "answer_options": [
+                ["Yes", 1.0],
+                ["No", 0.0]
+            ],
+            "importance_score": 1.0
+        },
+        {
             "question_id": "O-0007",
             "question_text": "Attitude within org toward AI?",
             "description": "Assesses the overall organisational attitude toward AI and advanced technologies.",
@@ -66,6 +77,117 @@
                 ["Excited", 1.0],
                 ["Neutral", 0.0],
                 ["Negative", -1.0]
+            ],
+            "importance_score": 1.0
+        },
+        {
+            "question_id": "O-0008",
+            "question_text": "Champions/Ambassador: Can you identify an influential person who has the flexibility to support efforts/experiments?",
+            "description": "Assesses whether there is at least one person with the mandate, credibility, and decision-making power to actively support and drive experimentation or implementation.",
+            "question_type": "categorical",
+            "answer_options": [
+                ["Yes", 1.0],
+                ["No", 0.0]
+            ],
+            "importance_score": 1.0
+        },
+        {
+            "question_id": "O-0009",
+            "question_text": "What are your donors' attitude toward AI?",
+            "description": "Assesses how key donors or funders are likely to perceive investments in AI. Consider past interactions and funding conditions to estimate support or reputational risk.",
+            "question_type": "categorical",
+            "answer_options": [
+                ["Excited", 1.0],
+                ["Neutral", 0.0],
+                ["Negative", -1.0]
+            ],
+            "importance_score": 1.0
+        },
+        {
+            "question_id": "O-0010",
+            "question_text": "Is it mission-critical?",
+            "description": "Determines if the problem being addressed is central to the organization's primary goals.",
+            "question_type": "categorical",
+            "answer_options": [
+                ["Yes", -1.0],
+                ["No", 0.0]
+            ],
+            "importance_score": 1.0
+        },
+        {
+            "question_id": "O-0011",
+            "question_text": "Is there a manual redundancy/fallback already?",
+            "description": "Assesses if a non-technical process exists that can be used if the system is unavailable or produces unreliable results.",
+            "question_type": "categorical",
+            "answer_options": [
+                ["Yes", 1.0],
+                ["No", -1.0]
+            ],
+            "importance_score": 1.0
+        },
+        {
+            "question_id": "O-0012",
+            "question_text": "Would a mistake be life-threatening?",
+            "description": "Assesses whether failure or incorrect behavior could directly lead to loss of life. Consider worst-case scenarios.",
+            "question_type": "categorical",
+            "answer_options": [
+                ["Yes", -1.0],
+                ["No", 1.0]
+            ],
+            "importance_score": 1.0
+        },
+        {
+            "question_id": "O-0013",
+            "question_text": "Would a mistake of the system affect your material/assets?",
+            "description": "Assesses whether system failure would place the organization’s physical or core mission-related assets at risk.",
+            "question_type": "categorical",
+            "answer_options": [
+                ["Yes", -1.0],
+                ["No", 1.0]
+            ],
+            "importance_score": 1.0
+        },
+        {
+            "question_id": "O-0014",
+            "question_text": "Would a mistake of the system affect your staff?",
+            "description": "Consider physical, psychological, legal, or workload-related impacts on staff due to errors or system failure.",
+            "question_type": "categorical",
+            "answer_options": [
+                ["Yes", -1.0],
+                ["No", 1.0]
+            ],
+            "importance_score": 1.0
+        },
+        {
+            "question_id": "O-0015",
+            "question_text": "Would a mistake of the system affect customers/beneficiaries/donors?",
+            "description": "Assesses negative impacts such as reduced service quality, loss of trust, or unmet expectations for external stakeholders.",
+            "question_type": "categorical",
+            "answer_options": [
+                ["Yes", -1.0],
+                ["No", 1.0]
+            ],
+            "importance_score": 1.0
+        },
+        {
+            "question_id": "O-0016",
+            "question_text": "Would a mistake affect of your system your mission/mandate?",
+            "description": "Assesses whether system failure could undermine a specific operation or project that contributes to the organization's mission.",
+            "question_type": "categorical",
+            "answer_options": [
+                ["Yes", -1.0],
+                ["No", 1.0]
+            ],
+            "importance_score": 1.0
+        },
+        {
+            "question_id": "O-0017",
+            "question_text": "Would a mistake of the system affect your reputation?",
+            "description": "Assesses whether errors or failure could lead to reputational damage or loss of trust among external stakeholders and the public.",
+            "question_type": "categorical",
+            "answer_options": [
+                ["Yes", -1.0],
+                ["No", 1.0]
             ],
             "importance_score": 1.0
         },
