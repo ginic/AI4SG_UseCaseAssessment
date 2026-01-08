@@ -1,3 +1,4 @@
 - [x] Break up question display and scoring functions into different collections
 - [x] Want to add a result that gives an estimate of how big the project that uses answers from specific questions in both technical and org sections
 - [ ] Add option to answer "I don't know" (contributes negatively to the score)
+- [ ] Move importance for scoring out of the Question object into the QuestionCollection. This will allow more flexible scoring schemas that can weight question contributions differently.
