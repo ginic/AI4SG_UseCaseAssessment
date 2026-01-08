@@ -10,7 +10,7 @@ from utils.loader import load_question_collection
 from utils.config import QUESTIONS_CACHE_KEY
 
 
-def render_question_with_help(question: Question) -> Optional[str | float]:
+def render_question_with_help(question_id: str) -> Optional[str | float]:
     """
     Renders display of the question object with a help tooltip.
     Returns the response currently selected by the user
@@ -22,7 +22,8 @@ def render_question_with_help(question: Question) -> Optional[str | float]:
         The user's response (str for categorical, float for range)
     """
     # Get current value from session state or use default
-    current_value = st.session_state[QUESTIONS_CACHE_KEY].get(question.question_id, None)
+    question = st.session_state[QUESTIONS_CACHE_KEY].get(question_id, None)
+    current_value = question.user_response
 
     # Render appropriate input widget based on question type
     if question.question_type == "categorical":
@@ -65,6 +66,6 @@ def question_interaction_section(question_collection_path):
 
     # Render questions with tooltip support
     st.markdown("---")
-    for question in question_collection.questions:
-        response = render_question_with_help(question=question)
-        st.session_state[QUESTIONS_CACHE_KEY][question.question_id].user_response = response
+    for qid in question_collection.question_ids:
+        response = render_question_with_help(qid)
+        st.session_state[QUESTIONS_CACHE_KEY][qid].user_response = response

@@ -1,6 +1,6 @@
 {
   "header": "Technical Readiness",
-  "questions": [
+  "question_ids": [
     "T-0001",
     "T-0002",
     "T-0003",

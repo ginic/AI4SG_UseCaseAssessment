@@ -2,7 +2,9 @@
 Pydantic models for questions and question collections.
 """
 
+import math
 from typing import Literal, Optional
+
 from pydantic import BaseModel, Field
 
 
@@ -64,9 +66,13 @@ class ThresholdResponse(BaseModel):
     The upper and lower bound determine the scoring range that will trigger the response.
     """
 
-    upper: int = int("inf")
-    lower: int = int("-inf")
+    upper: int = math.inf
+    lower: int = -math.inf
     description: str | None = None
+
+
+class QuestionBank(BaseModel):
+    questions: list[Question]
 
 
 class QuestionCollection(BaseModel):
@@ -78,10 +84,10 @@ class QuestionCollection(BaseModel):
     """
 
     header: str | None = None
-    questions: list[Question]
+    question_ids: list[str]
     threshold: list[ThresholdResponse] | None = None
 
-    def calculate_score(self) -> dict:
+    def calculate_score(self, question_lookup: dict[str, Question]) -> dict:
         """
         Calculate the overall score based on user responses and importance weights.
 
@@ -95,7 +101,8 @@ class QuestionCollection(BaseModel):
         total_importance = 0.0
         total_response_score = 0.0
 
-        for question in self.questions:
+        for qid in self.question_ids:
+            question = question_lookup[qid]
             response_score = question.get_response_score()
             if response_score is not None:
                 total_response_score += response_score
@@ -110,9 +117,8 @@ class QuestionCollection(BaseModel):
         return {
             "weighted_average_score": weighted_average_score,
             "total_weighted_score": total_weighted_score,
-            "total_response_score": total_response_score
+            "total_response_score": total_response_score,
         }
-
 
     def get_score_response(score: int) -> ThresholdResponse:
         # todo return the proper bucket for the score

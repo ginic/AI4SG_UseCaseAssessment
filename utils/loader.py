@@ -7,7 +7,7 @@ from pathlib import Path
 
 import streamlit as st
 
-from utils.models import QuestionCollection, Question
+from utils.models import QuestionCollection, QuestionBank
 from utils.config import QUESTIONS_PATH, QUESTIONS_CACHE_KEY
 
 
@@ -26,7 +26,7 @@ def initialize_questions_cache() -> None:
     with open(QUESTIONS_PATH, "r") as f:
         questions_data = json.load(f)
 
-    input_questions = QuestionCollection(**questions_data)
+    input_questions = QuestionBank(**questions_data)
 
     question_lookup = {}
 
@@ -66,8 +66,7 @@ def load_question_collection(json_file_path: str) -> QuestionCollection:
     questions_collection = QuestionCollection(**data)
 
     # Build list of Question objects from cache
-    for question in questions_collection.questions:
-        qid = question.question_id
+    for qid in questions_collection.question_ids:
         if qid not in st.session_state[QUESTIONS_CACHE_KEY]:
             raise ValueError(
                 f"Question ID '{qid}' from {file_path} not found in questions cache. Check that all questions are defined in {QUESTIONS_PATH}"
