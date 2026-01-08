@@ -17,21 +17,22 @@ def main():
     st.title("Assessment Results")
     st.write("Summary of your assessment and recommendations for your AI/ML project.")
 
-
     for scoring_category in [ORGANIZATION_SCORING_PATH, TECHNICAL_SCORING_PATH, AMBITION_SCORING_PATH]:
         question_collection = load_question_collection(str(scoring_category))
         collection_score = question_collection.calculate_score(st.session_state[QUESTIONS_CACHE_KEY])
 
         st.subheader(question_collection.header)
-        st.write(f"{collection_score['weighted_average_score']:.2f} (weighted average)")
-        st.write(f"{collection_score['total_response_score']:.2f} (total score)")
 
-        #Using raw total response score
+        # Using raw total response score
         score_bucket = question_collection.get_score_response(collection_score["total_response_score"])
         if score_bucket:
-            st.write(f"Score Results: {score_bucket.description}")
+            st.badge(score_bucket.header, color=score_bucket.color, width="stretch")
+            st.write(score_bucket.description)
         else:
-            st.write(f"Score is out of bounds. Please check score thresholds")
+            st.error(f"Score '{collection_score}' is out of bounds. Please check score thresholds")
+
+        st.write(f"{collection_score['weighted_average_score']:.2f} (weighted average)")
+        st.write(f"{collection_score['total_response_score']:.2f} (total score)")
 
         # Show detailed breakdown
         with st.expander("Show detailed scoring breakdown"):

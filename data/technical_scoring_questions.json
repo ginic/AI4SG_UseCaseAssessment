@@ -20,8 +20,8 @@
     "T-0017"
   ],
   "thresholds": [
-        {"upper": -5, "description": "Large project"},
-        {"lower": -5, "upper":10, "description": "Moderately sized project"},
-        {"lower":10, "description": "Small project"}
+        {"upper": -5, "header": "Technically challenging", "description": "This project sounds extremely technically complex or may be impossible to solve using AI. Consider reviewing your project goals and available data. Can you simplify the goals or data formats? Can you invest more time or resources into data readiness or technical solutions? Experiment more with available data and AI tools before proceeding.", "color": "red"},
+        {"lower": -5, "upper":10, "header": "Moderately technically challenging", "description": "This project seems fairly technically complex, but may still be achievable with enough investment in data readiness and technical capabilities. Review your data strategy, available IT and AI resources, and how ambitious the project scope and timeline is.", "color": "yellow"},
+        {"lower":10, "header":"Realistic technical expectations", "description": "The technical goals of this project seem appropriate based on your organization's data strategy. It should be achievable with your current technical resources.", "color": "green"}
   ]
 }

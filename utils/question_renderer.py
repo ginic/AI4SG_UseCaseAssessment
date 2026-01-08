@@ -3,7 +3,6 @@ Utility functions for rendering questions in Streamlit with tooltip support.
 """
 
 import streamlit as st
-from utils.models import Question
 from typing import Optional
 
 from utils.loader import load_question_collection

@@ -7,6 +7,7 @@ from typing import Literal, Optional
 
 from pydantic import BaseModel, Field
 
+
 class Question(BaseModel):
     """
     Represents a single assessment question.
@@ -25,14 +26,21 @@ class Question(BaseModel):
 
     # Immutable fields
     question_id: str
+    """Question identifier string, must be there and unique to the question"""
     question_text: str
+    """Text of the question that get's explained to the user"""
     question_type: Literal["categorical", "range"] = "categorical"
+    """Categorical questions are displayed as multiple choice bubbles, Range questions as a slider """
     answer_options: list[tuple[str, float]]  # (option_text, score)
+    """List of possible answer texts and their contribution to the score weight"""
     description: Optional[str] = None
+    """Description of the question that provides additional context to the user"""
 
     # Mutable fields
     importance_score: float = Field(default=1.0, ge=0)
+    """Weight of this question in overall scoring"""
     user_response: Optional[str | float] = None
+    """The response selected by the user"""
 
     model_config = {"validate_assignment": True}
 
@@ -66,12 +74,20 @@ class ThresholdResponse(BaseModel):
     """
 
     upper: int = math.inf
+    """The upper bound (exclusive) for triggering this threshold"""
     lower: int = -math.inf
+    """The lower bound (inclusive) for triggering this threshold"""
+    header: str
+    """A short explanation that is displayed in the result badge like a header"""
     description: str | None = None
+    """A detailed description that explains the context and implication of the result"""
+    color: str = "blue"
+    """Color of the Streamlit badge that gets displayed for this result"""
 
 
 class QuestionBank(BaseModel):
     questions: list[Question]
+    """A list of all questions which can be considered for scoring"""
 
 
 class QuestionCollection(BaseModel):
@@ -83,8 +99,11 @@ class QuestionCollection(BaseModel):
     """
 
     header: str | None = None
+    """Brief description of the purpose for these questions"""
     question_ids: list[str]
+    """List of question ids to be used for scoring"""
     thresholds: list[ThresholdResponse] | None = None
+    """Define the responses that are triggered for various possible scores ranges"""
 
     def calculate_score(self, question_lookup: dict[str, Question]) -> dict:
         """
@@ -125,9 +144,8 @@ class QuestionCollection(BaseModel):
 
         for bucket in self.thresholds:
             # Check if the score is within the range [lower, upper)
-            # Note: We use <= for upper if you want the bound to be inclusive
-            lower_bound = bucket.lower if bucket.lower is not None else -math.inf
-            upper_bound = bucket.upper if bucket.upper is not None else math.inf
+            lower_bound = bucket.lower
+            upper_bound = bucket.upper
 
             if lower_bound <= score < upper_bound:
                 return bucket
