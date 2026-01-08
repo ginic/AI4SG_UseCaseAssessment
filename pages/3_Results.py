@@ -29,8 +29,6 @@ def main():
         organizational_questions = st.session_state[SESSION_ORGANIZATIONAL_RESPONSES].questions
         technical_questions = st.session_state[SESSION_TECHNICAL_RESPONSES].questions
 
-        st.write(st.session_state[SESSION_ORGANIZATIONAL_RESPONSES])
-
         organizational_score = calculate_score(organizational_questions)
         technical_score = calculate_score(technical_questions)
 
