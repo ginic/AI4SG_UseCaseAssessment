@@ -3,7 +3,7 @@ Results and Recommendations Page
 """
 
 import streamlit as st
-from utils.config import ORGANIZATION_SCORING_PATH, TECHNICAL_SCORING_PATH, AMBITION_SCORING_PATH, QUESTIONS_CACHE_KEY
+from utils.config import ORGANIZATION_SCORING_PATH, TECHNICAL_SCORING_PATH, LEGAL_SCORING_PATH, AMBITION_SCORING_PATH, QUESTIONS_CACHE_KEY
 from utils.loader import load_question_collection
 from utils.navigation import add_navigation_buttons
 
@@ -17,7 +17,8 @@ def main():
     st.title("Assessment Results")
     st.write("Summary of your assessment and recommendations for your AI/ML project.")
 
-    for scoring_category in [ORGANIZATION_SCORING_PATH, TECHNICAL_SCORING_PATH, AMBITION_SCORING_PATH]:
+
+    for scoring_category in [ORGANIZATION_SCORING_PATH, TECHNICAL_SCORING_PATH, LEGAL_SCORING_PATH, AMBITION_SCORING_PATH]:
         question_collection = load_question_collection(str(scoring_category))
         collection_score = question_collection.calculate_score(st.session_state[QUESTIONS_CACHE_KEY])
 
