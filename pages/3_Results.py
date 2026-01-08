@@ -7,6 +7,11 @@ from utils.config import ORGANIZATION_SCORING_PATH, TECHNICAL_SCORING_PATH, AMBI
 from utils.loader import load_question_collection
 from utils.navigation import add_navigation_buttons
 
+# Redirect to Introduction page on refresh
+if st.session_state.get("_results_page_loaded_once") is None:
+    st.session_state["_results_page_loaded_once"] = True
+    st.switch_page("pages/0_Introduction.py")
+
 
 def main():
     st.title("Assessment Results")
