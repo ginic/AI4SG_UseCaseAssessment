@@ -7,7 +7,6 @@ from typing import Literal, Optional
 
 from pydantic import BaseModel, Field
 
-
 class Question(BaseModel):
     """
     Represents a single assessment question.
