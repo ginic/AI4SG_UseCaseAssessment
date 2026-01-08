@@ -5,13 +5,11 @@
     "L-0002",
     "L-0003",
     "L-0004",
-    "L-0005",
-    "L-0006",
-    "L-0007"
+    "L-0005"
   ],
   "thresholds": [
-    {"upper": -5, "header": "Review organizational readiness", "description": "You may face a lot of organizational friction when tackling this project. We recommend building trust within your organization to establish priorities and innovation processes.", "color": "red"},
-    {"lower": -5, "upper":10, "header": "Some organizational friction", "description": "Your organization seems somewhat supportive of beginning this project, but you may face some challenges, uncertainty, or lack of support. We recommend discussing the project more within your organization to further solidify buy-in."},
-    {"lower":10, "upper": 20, "header": "Strong organizational support", "description": "Your organization seems to have clear ideas about their priorities and strong innovation processes in place. This should help you navigate planning and implementing the project smoothly.", "color": "red"}
+    {"upper": -5, "header": "Review legal readiness", "description": "You may face a lot of organizational friction when tackling this project. We recommend building trust within your organization to establish priorities and innovation processes.", "color": "red"},
+    {"lower": -5, "upper":10, "header": "Some legal friction", "description": "Your organization seems somewhat supportive of beginning this project, but you may face some challenges, uncertainty, or lack of support. We recommend discussing the project more within your organization to further solidify buy-in."},
+    {"lower":10, "upper": 20, "header": "Strong legal support", "description": "Your organization seems to have clear ideas about their priorities and strong innovation processes in place. This should help you navigate planning and implementing the project smoothly.", "color": "red"}
   ]
 }
