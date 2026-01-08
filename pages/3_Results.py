@@ -10,7 +10,7 @@ from utils.navigation import add_navigation_buttons
 # Redirect to Introduction page on refresh
 if st.session_state.get("_results_page_loaded_once") is None:
     st.session_state["_results_page_loaded_once"] = True
-    st.switch_page("pages/Introduction.py")
+    st.switch_page("Introduction.py")
 
 
 def main():
