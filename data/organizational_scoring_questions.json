@@ -17,7 +17,7 @@
         "O-0014",
         "O-0015",
         "O-0016",
-        "0-0017"
+        "O-0017"
     ],
     "thresholds": [
         {"upper": -5, "description": "Large project"},
