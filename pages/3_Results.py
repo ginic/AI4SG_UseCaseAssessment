@@ -7,7 +7,7 @@ from utils.config import ORGANIZATION_SCORING_PATH, TECHNICAL_SCORING_PATH, AMBI
 from utils.loader import load_question_collection
 from utils.navigation import add_navigation_buttons
 
-# Redirect to Introduction page on unitialized app
+# Redirect to Introduction page on uninitialized app
 if st.session_state.get("questions") is None:
     st.switch_page("Introduction.py")
 

@@ -7,6 +7,9 @@ from utils.config import TECHNICAL_QUESTIONS_PATH
 from utils.navigation import add_navigation_buttons
 from utils.question_renderer import question_interaction_section
 
+# Redirect to Introduction page on uninitialized app
+if st.session_state.get("questions") is None:
+    st.switch_page("Introduction.py")
 
 def main():
     st.title("Technical Constraints")
