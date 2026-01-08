@@ -21,6 +21,4 @@ ORGANIZATION_SCORING_PATH = DATA_DIR / "organizational_scoring_questions.json"
 TECHNICAL_SCORING_PATH = DATA_DIR / "technical_scoring_questions.json"
 AMBITION_SCORING_PATH = DATA_DIR / "ambition_scoring_questions.json"
 
-# Session state keys
-SESSION_ORGANIZATIONAL_RESPONSES = "organizational_responses"
-SESSION_TECHNICAL_RESPONSES = "technical_responses"
+QUESTIONS_CACHE_KEY = "questions"
