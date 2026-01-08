@@ -52,8 +52,8 @@
             "description": "Assesses whether the organisation is willing and able to allocate budget to a technical solution.",
             "question_type": "categorical",
             "answer_options": [
-                ["Yes", 1.0],
-                ["No", 0.0]
+                ["Willing", 1.0],
+                ["Not Willing", -1.0]
             ],
             "importance_score": 1.0
         },
@@ -105,7 +105,7 @@
         },
         {
             "question_id": "O-0010",
-            "question_text": "Is it mission-critical?",
+            "question_text": "Is the system addressing a missing critical area?",
             "description": "Determines if the problem being addressed is central to the organization's primary goals.",
             "question_type": "categorical",
             "answer_options": [
@@ -116,7 +116,7 @@
         },
         {
             "question_id": "O-0011",
-            "question_text": "Is there a manual redundancy/fallback already?",
+            "question_text": "Is there a manual redundancy/fallback system in place?",
             "description": "Assesses if a non-technical process exists that can be used if the system is unavailable or produces unreliable results.",
             "question_type": "categorical",
             "answer_options": [
@@ -143,7 +143,7 @@
             "question_type": "categorical",
             "answer_options": [
                 ["Yes", -1.0],
-                ["No", 1.0]
+                ["No", 0.0]
             ],
             "importance_score": 1.0
         },
@@ -209,7 +209,7 @@
             "question_type": "categorical",
             "answer_options": [
                 ["Yes", 1.0],
-                ["No", 0.0]
+                ["No", -1.0]
             ],
             "importance_score": 1.0
         },
@@ -219,14 +219,14 @@
             "description": "Identifies the data formats that the system will actively process, analyse, or manipulate.",
             "question_type": "categorical",
             "answer_options": [
-                ["Text", 1.0],
-                ["Audio", 0.0],
+                ["Combination", -1.0],
+                ["Text", 0.5],
+                ["Audio", -0.5],
                 ["Images", -1.0],
-                ["Spreadsheets", 1.0],
-                ["Tabular/Structured Database", 1.0],
+                ["Spreadsheets", 0.5],
+                ["Structured Database", 1.0],
                 ["Geospatial", 0.0],
-                ["Video", -1],
-                ["Combination", -1.0]
+                ["Video", -0.5]
             ],
             "importance_score": 1.0
         },
@@ -237,8 +237,8 @@
             "question_type": "categorical",
             "answer_options": [
                 ["Small (< 100 files/records)", 1.0],
-                ["Medium (~ 1000 files/records)", 0.0],
-                ["Large (>1TB)", -1.0]
+                ["Medium (~1000 files/records)", 0.0],
+                ["Large (> 100,000 files/records)", -1.0]
             ],
             "importance_score": 1.0
         },
@@ -274,7 +274,7 @@
             "question_type": "categorical",
             "answer_options": [
                 ["Yes", 1.0],
-                ["No", 0.0]
+                ["No", -1.0]
             ],
             "importance_score": 1.0
         },
@@ -285,7 +285,7 @@
             "question_type": "categorical",
             "answer_options": [
                 ["Yes", 1.0],
-                ["No", 0.0]
+                ["No", -1.0]
             ],
             "importance_score": 1.0
         },
@@ -296,7 +296,7 @@
             "question_type": "categorical",
             "answer_options": [
                 ["Yes", 1.0],
-                ["No", 0.0]
+                ["No", -1.0]
             ],
             "importance_score": 1.0
         },
@@ -307,7 +307,7 @@
             "question_type": "categorical",
             "answer_options": [
                 ["Yes", -1.0],
-                ["No", 0.0]
+                ["No", 1.0]
             ],
             "importance_score": 1.0
         },
@@ -351,7 +351,7 @@
             "question_type": "categorical",
             "answer_options": [
                 ["Yes", 1.0],
-                ["No", 0.0]
+                ["No", -1.0]
             ],
             "importance_score": 1.0
         },
@@ -368,11 +368,11 @@
         },
         {
             "question_id": "T-0016",
-            "question_text": "Does your idea build on an existing tool you use or is it entirely new?",
+            "question_text": "Does the project require building an entirely new system or tool?",
             "description": "Assesses user adoption and change management. Extending familiar tools often simplifies the transition for users.",
             "question_type": "categorical",
             "answer_options": [
-                ["Yes", 1.0],
+                ["Yes", -1.0],
                 ["No", 0.0]
             ],
             "importance_score": 1.0
