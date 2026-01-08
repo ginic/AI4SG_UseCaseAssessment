@@ -10,6 +10,7 @@ DATA_DIR = PROJECT_ROOT / "data"
 
 # Data file paths
 QUESTIONS_PATH = DATA_DIR / "questions.json"
+INTRO_TEXT_MARKDOWN = DATA_DIR / "intro_text.md"
 
 # Questions around organizational friction, financial resources and buy-in
 ORGANIZATIONAL_QUESTIONS_PATH = DATA_DIR / "organizational_display_questions.json"
