@@ -7,7 +7,7 @@ import streamlit as st
 
 # Define page order
 PAGES = [
-    {"name": "Introduction", "path": "pages/0_Introduction.py"},
+    {"name": "Introduction", "path": "Introduction.py"},
     {"name": "Organizational Constraints", "path": "pages/1_Organizational_Constraints.py"},
     {"name": "Technical Constraints", "path": "pages/2_Technical_Constraints.py"},
     {"name": "Results", "path": "pages/3_Results.py"},
@@ -32,7 +32,7 @@ def add_navigation_buttons(current_page_name: str):
     current_index = get_current_page_index(current_page_name)
 
     # Create columns for button layout
-    col1, col2, col3 = st.columns([1, 1, 1])
+    col1, _, col3 = st.columns([1, 1, 1])
 
     with col1:
         # Show Back button if not on first page
