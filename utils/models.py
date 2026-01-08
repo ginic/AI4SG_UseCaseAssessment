@@ -112,9 +112,7 @@ class QuestionCollection(BaseModel):
             "total_weighted_score": total_weighted_score,
             "total_response_score": total_response_score
         }
-            return 0.0
 
-        return total_weighted_score / total_importance
 
     def get_score_response(score: int) -> ThresholdResponse:
         # todo return the proper bucket for the score
