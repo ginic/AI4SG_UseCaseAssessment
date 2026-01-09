@@ -16,4 +16,4 @@ Each page of the assessment tool contains questions to about the project idea or
 On the final page, your answers will be analyzed on various dimensions of organizational and technical readiness to help you understand how challenging or ambitious your project idea may be.
 
 ## About the team
-This tool was collaboratively developed at the [2026 Dagstuhl AI for Social Good Seminar](https://www.dagstuhl.de/26021).
+This tool was collaboratively developed at the [2026 Dagstuhl AI for Social Good Seminar](https://www.dagstuhl.de/26021). If you have feedback, please contact us by filling out our [Google Form](https://forms.gle/erA7MhvmoNG6sy668) or submitting an issue on [GitHub](https://github.com/ginic/AI4SG_UseCaseAssessment).
