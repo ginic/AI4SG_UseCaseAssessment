@@ -11,7 +11,7 @@ The interviewer should ideally be someone within the organization who has a basi
 Taking this approach ensures that any proposed use case is grounded in real organizational needs, aligned with organizational priorities, and feasible given available data and resources. It is not simply about finding problems, it is about finding the right problems and the solutions to solve them.
 
 ## How to use this website
-Each page of the assessment tool contains questions to about the project idea or problem you are hoping to solve. Select an option for each question, then go on to the next page. You may use the sidebar navigation or buttons on the bottom to navigate between pages.
+Each page of the assessment tool contains questions to about the project idea or problem you are hoping to solve. Select an option for each question, then go on to the next page. You may use the sidebar or buttons on the bottom to navigate between pages.
 
 On the final page, your answers will be analyzed on various dimensions of organizational and technical readiness to help you understand how challenging or ambitious your project idea may be.
 
