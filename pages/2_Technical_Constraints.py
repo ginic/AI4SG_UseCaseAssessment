@@ -12,7 +12,10 @@ def main():
     st.title("Technical Constraints")
     st.write("Assessment of technical capabilities and constraints for AI/ML projects.")
 
-    question_interaction_section(TECHNICAL_QUESTIONS_PATH)
+    try:
+        question_interaction_section(TECHNICAL_QUESTIONS_PATH)
+    except Exception as e:
+        st.error(f"Unexpected error: {e}")
 
     # Add navigation buttons
     add_navigation_buttons("Technical Constraints")

@@ -13,7 +13,6 @@ def main():
     st.title("Organizational Constraints")
     st.write("Assessment of organizational readiness and constraints for AI/ML projects.")
 
-    # Load organizational questions
     try:
         question_interaction_section(ORGANIZATIONAL_QUESTIONS_PATH)
 
