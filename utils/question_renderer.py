@@ -36,6 +36,7 @@ def render_question_with_help(question_id: str) -> Optional[str | float]:
             options=option_texts,
             index=index,
             help=question.description,  # Built-in Streamlit tooltip
+            key=question_id,
         )
 
     elif question.question_type == "range":
@@ -50,6 +51,7 @@ def render_question_with_help(question_id: str) -> Optional[str | float]:
             max_value=float(max_val),
             value=float(current_value),
             help=question.description,  # Built-in Streamlit tooltip
+            key=question_id,
         )
 
     else:

@@ -4,24 +4,20 @@ Interactive assessment framework for scoping AI, ML, and data science projects f
 """
 
 import streamlit as st
+
+from utils.config import INTRO_TEXT_MARKDOWN
 from utils.navigation import add_navigation_buttons
 from utils.loader import initialize_questions_cache
 
 
-st.set_page_config(page_title="Introduction", layout="wide")
+st.set_page_config(page_title="AI4SG Assessment Tool", layout="wide")
 
 # Initialize questions cache at application startup
 initialize_questions_cache()
 
 st.title("AI4SG Use Case Assessment")
-st.markdown("### Welcome to the AI for Social Good Project Assessment Tool")
-
-st.write("""
-This interactive tool will guide you through an assessment of your organization's
-readiness and constraints when planning an AI or data science project.
-""")
-
-st.info("Use the sidebar to navigate through the assessment sections.")
+st.warning("This is still a draft version. Please give us your feedback so we can help improve!")
+st.markdown(body=INTRO_TEXT_MARKDOWN.read_text())
 
 # Add navigation buttons
 st.markdown("---")
