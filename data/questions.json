@@ -387,6 +387,66 @@
                 ["No", 0.0]
             ],
             "importance_score": 1.0
+        },
+        {
+            "question_id": "L-0001",
+            "question_text": "Does your data include sensitive personal information?",
+            "description": "Assesses whether data includes personal or sensitive information subject to legal, ethical, or organisational restrictions (e.g., identifiers, location, health records).",
+            "question_type": "categorical",
+            "answer_options": [
+                ["Yes", -1.0],
+                ["No", 0.0]
+            ],
+            "importance_score": 1.0
+        },
+        {
+            "question_id": "L-0002",
+            "question_text": "What sensitive nature is the data you will use in your system?",
+            "description": "Classifies the type of sensitivity to identify required safeguards. (Note: Only relevant if L-0001 is Yes).",
+            "question_type": "categorical",
+            "answer_options": [
+                ["Personal", -1.0],
+                ["Sensitive", -1.0],
+                ["Location", -1.0],
+                ["Biometric", -1.0],
+                ["Vulnerable", -1.0],
+                ["Medical", -1.0],
+                ["Minors", -1.0]
+            ],
+            "importance_score": 1.0
+        },
+        {
+            "question_id": "L-0003",
+            "question_text": "Do existing agreements allow this data to be used for this purpose?",
+            "description": "Assesses whether legal, contractual, or donor agreements (MoUs, consent statements) permit the intended use of data for this specific system.",
+            "question_type": "categorical",
+            "answer_options": [
+                ["Yes", 1.0],
+                ["No", -1.0]
+            ],
+            "importance_score": 1.0
+        },
+        {
+            "question_id": "L-0004",
+            "question_text": "Has your organisation assessed the legal framework for using digital or AI systems in its primary operating country?",
+            "description": "Assesses baseline understanding of high-level awareness of data protection, technology use, and sector-specific regulations in the country of operation.",
+            "question_type": "categorical",
+            "answer_options": [
+                ["Yes", 1.0],
+                ["No", -1.0]
+            ],
+            "importance_score": 1.0
+        },
+        {
+            "question_id": "L-0005",
+            "question_text": "Has your organisation already assessed the relevant legal frameworks for this system?",
+            "description": "Assesses whether the organisation has considered specific laws (cross-border transfers, procurement constraints) for this specific system and its impact.",
+            "question_type": "categorical",
+            "answer_options": [
+                ["Yes", 1.0],
+                ["No", -1.0]
+            ],
+            "importance_score": 1.0
         }
     ]
 }
