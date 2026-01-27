@@ -1,5 +1,5 @@
 """
-Configuration and constants for the AI4SG Use Case Assessment application.
+Configuration and constants
 """
 
 from pathlib import Path
