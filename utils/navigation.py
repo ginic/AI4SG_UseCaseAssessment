@@ -1,8 +1,13 @@
 """
-Navigation utilities for multi-page Streamlit app
+Navigate and display pages in the multi-page Streamlit app
 """
 
+from pathlib import Path
+
 import streamlit as st
+
+from utils.config import QUESTIONS_CACHE_KEY
+from utils.question_renderer import question_interaction_section
 
 
 # Define page order
@@ -48,3 +53,17 @@ def add_navigation_buttons(current_page_name: str):
             next_page = PAGES[current_index + 1]
             if st.button("Next →", use_container_width=True):
                 st.switch_page(next_page["path"])
+
+
+def add_question_page(page_title: str, page_intro_text: str, questions_path: Path):
+    # Redirect to Introduction page on uninitialized app
+    if st.session_state.get(QUESTIONS_CACHE_KEY) is None:
+        st.switch_page("Introduction.py")
+
+    st.title(page_title)
+    st.write(page_intro_text)
+
+    question_interaction_section(questions_path)
+
+    # Add navigation buttons
+    add_navigation_buttons(page_title)
