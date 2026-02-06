@@ -113,7 +113,7 @@ class QuestionScoringCollection(BaseModel):
     """Brief description of the purpose for these questions"""
     question_ids: list[str]
     """List of question ids to be used for scoring"""
-    thresholds: list[ThresholdResponse]
+    thresholds: list[ThresholdResponse] | None = None
     """Define the responses that are triggered for various possible scores ranges"""
 
     def calculate_score(self, question_lookup: dict[str, Question]) -> ScoreResult:
@@ -146,9 +146,16 @@ class QuestionScoringCollection(BaseModel):
             # If the weighted score is less than 0, normalize by the minimum weighted score, but keep the negative sign
             weighted_norm_denominator = abs(min_weighted_score)
 
-        return ScoreResult(total_weighted_score, total_weighted_score / weighted_norm_denominator, total_response_score)
+        return ScoreResult(
+            weighted_score=total_weighted_score,
+            normalized_weighted_score=total_weighted_score / weighted_norm_denominator,
+            raw_response_score=total_response_score,
+        )
 
     def get_score_response(self, score: float) -> ThresholdResponse | None:
+        if self.thresholds is None:
+            return None
+
         for bucket in self.thresholds:
             # Check if the score is within the range [lower, upper)
             lower_bound = bucket.lower
