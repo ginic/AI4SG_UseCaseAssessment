@@ -48,23 +48,22 @@ This application can be deployed on [Streamlit Community Cloud](https://docs.str
 ├── Introduction.py                          # Main application entry point
 ├── pages/                          # Multi-page app pages
 │   ├── 1_Organizational_Constraints.py
-│   ├── 2_Technical_Constraints.py
-│   └── 3_Results.py
+│   ...
 ├── components/                     # Reusable UI components
-├── utils/                          # Helper functions and utilities
+├── utils/                          # Python package with helper functions and data models
 │   ├── models.py                   # Pydantic models (Question, QuestionCollection)
 │   ├── loader.py                   # JSON loading utilities
-│   └── config.py                   # Configuration and paths
-├── data/                           # Assessment data and configurations
-│   ├── organizational_questions.json
-│   └── technical_questions.json
+│   ...
+├── data/                           # Assessment data and configurations                      # Data configuration files in JSON or Markdown content for the site go here
+│   ├── questions.json
+│   ...
 ├── .devcontainer/                  # Automatically added by [Streamlit Community Cloud for GitHub Codespaces](https://docs.streamlit.io/deploy/streamlit-community-cloud/manage-your-app/edit-your-app)
 └── requirements.txt                # Python dependencies
 ```
 
 ## Question Configuration
 
-Questions are configured using JSON files in the `data/` directory. Each question follows this structure:
+All questions are configured in the JSON file in the `data/questions.json` directory, which can be considered our full question database. The JSON follows this structure, with each question represented as a JSON object with a unique "question_id":
 
 ```json
 {
@@ -74,7 +73,7 @@ Questions are configured using JSON files in the `data/` directory. Each questio
       "question_text": "Your question here?",
       "question_type": "categorical",
       "answer_options": [
-        ["Option 1", 1.0],
+        ["Option 1", -1.0],
         ["Option 2", 2.0]
       ],
       "importance_score": 1.0
@@ -83,9 +82,45 @@ Questions are configured using JSON files in the `data/` directory. Each questio
 }
 ```
 
-- `question_type`: Can be "categorical" (default) or "range"
-- `answer_options`: List of [text, score] tuples
-- `importance_score`: Weight of the question in overall scoring (default: 1.0)
+The question fields indicate:
+- `question_type`: Can be "categorical" (default) for text responses or "range" for a range of numberical values.
+- `answer_options`: List of [text, score] tuples. Answers that result in an easier path to completing the project should be given a positive score greater than 0, with magnitude expressing how much easier. Answers that make a project more challenging should have a negative score less than 0, with lower numbers (larger magnitude or absolute value) reflecting larger challenges. For answers that are neutral, set their score to 0.
+- `importance_score`: Weight of the question in overall scoring (default: 1.0). Make this larger if you feel a question is more important than others in the same scoring categories.
+
+## Displaying Questions
+Grouping questions to be displayed on a particular page is done by simply listing question ids in a JSON file as follows:
+```json
+{
+  "question_ids": [
+    "T-0001",
+    "T-0002",
+    "T-0003",
+    "T-0004",
+    "T-0005",
+    ...
+}
+```
+Set up your application pages in the `pages` folder to read from the appropriate JSON file.
+
+## Scoring Rubric Configuration
+Scoring configurations with thresholds to determine the final decision to display are defined separately from questions and display pages, so that you can score on more parameters than there are pages and use the same questions in multiple scoring rubrics.
+
+The normalized scoring ranges for each rubric range from -1 to 1, so ensure threshold values are within this range. This allows you to use the same thresholds even if the importance of questions is changed. A script to validate the scoring rubric and compute minimum and maximum scores is available in `utils/analyze_scoring.py` and can be run with `python -m utils.analyze_scoring --help`.
+
+Define your scoring rubric with a display header, list of question ids, and thresholds with a header, description, color, upper bound (exlusive) and lower (inclusive) bound range. If the upper bound is left out, it's assumed to be infinity, and if the lower bound is left out, it's assumed to be negative infinity. One of the thresholds will be displayed on the final results page for each scoring rubric, depending on what the responses to questions are.
+
+Here is an example of the threshold configuration file. Note that the upper and lower bound are adjacent intervals and with endpoints ranging between -1 and 1:
+```json
+{
+    "header": "Rubric Name Display Header ",
+    "question_ids": ["O-0001", "O-0004", "T-0005", "T-0006", "T-0011"],
+    "thresholds": [
+        {"upper": -0.5, "header": "Low scoring result", "description": "This will be challenging", "color": "violet"},
+        {"lower": -0.5, "upper":0.5, "header": "Medium scoring result", "description": "This will be moderately challenging, but achievable", "color": "blue"},
+        {"lower":0.5, "header": "Easy result", "description": "This shouldn't be too hard", "color":"green"}
+    ]
+}
+```
 
 ## Development
 

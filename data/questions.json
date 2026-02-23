@@ -401,10 +401,11 @@
         },
         {
             "question_id": "L-0002",
-            "question_text": "What sensitive nature is the data you will use in your system?",
+            "question_text": "What is the nature is the sensitive data you will use in your system? Choose only one, even if multiple apply.",
             "description": "Classifies the type of sensitivity to identify required safeguards. (Note: Only relevant if L-0001 is Yes).",
             "question_type": "categorical",
             "answer_options": [
+                ["Not applicable", 0.0],
                 ["Personal", -1.0],
                 ["Sensitive", -1.0],
                 ["Location", -1.0],

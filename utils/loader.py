@@ -7,7 +7,7 @@ from pathlib import Path
 
 import streamlit as st
 
-from utils.models import QuestionCollection, QuestionBank
+from utils.models import QuestionScoringCollection, QuestionBank
 from utils.config import QUESTIONS_PATH, QUESTIONS_CACHE_KEY
 
 
@@ -36,7 +36,7 @@ def initialize_questions_cache() -> None:
     st.session_state[QUESTIONS_CACHE_KEY] = question_lookup
 
 
-def load_question_collection(json_file_path: str) -> QuestionCollection:
+def load_question_collection(json_file_path: str) -> QuestionScoringCollection:
     """
     Load questions from a category file, validate them against the questions cache and return as a QuestionCollection
     that can be used for display or scoring.
@@ -63,7 +63,7 @@ def load_question_collection(json_file_path: str) -> QuestionCollection:
     with open(file_path, "r") as f:
         data = json.load(f)
 
-    questions_collection = QuestionCollection.model_validate(data)
+    questions_collection = QuestionScoringCollection.model_validate(data)
 
     # Build list of Question objects from cache
     for qid in questions_collection.question_ids:

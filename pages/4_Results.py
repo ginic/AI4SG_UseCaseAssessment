@@ -31,15 +31,18 @@ def main():
         st.subheader(question_collection.header)
 
         # Using raw total response score
-        score_bucket = question_collection.get_score_response(collection_score["total_response_score"])
+        score_bucket = question_collection.get_score_response(collection_score.normalized_weighted_score)
         if score_bucket:
             st.badge(score_bucket.header, color=score_bucket.color, width="stretch")
             st.write(score_bucket.description)
         else:
             st.error(f"Score '{collection_score}' is out of bounds. Please check score thresholds")
 
-        st.write(f"{collection_score['weighted_average_score']:.2f} (weighted average)")
-        st.write(f"{collection_score['total_response_score']:.2f} (total score)")
+        st.write(
+            f"Score normalized between -1 (challenging) and 1 (straightforward): {collection_score.normalized_weighted_score:.2f}"
+        )
+        st.write(f"Raw weighted average: {collection_score.weighted_score:.2f}")
+        st.write(f"Raw unweighted score: {collection_score.raw_response_score:.2f}")
 
         # Show detailed breakdown
         with st.expander("Show detailed scoring breakdown"):
