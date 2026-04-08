@@ -1,3 +1,4 @@
 streamlit>=1.30.0
 pydantic>=2.0.0
 ruff>=0.1.0
+plotly>=5.0.0
