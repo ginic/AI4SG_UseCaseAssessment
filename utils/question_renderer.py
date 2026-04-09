@@ -2,6 +2,7 @@
 Utility functions for rendering questions in Streamlit with tooltip support.
 """
 
+import pandas as pd
 import streamlit as st
 from typing import Optional
 
@@ -60,6 +61,29 @@ def render_question_with_help(question_id: str) -> Optional[str | float]:
 
     # Store response in session state
     return response
+
+
+def build_contributions_table(
+    contributions: list[tuple[str, float]], question_lookup: dict
+) -> pd.DataFrame:
+    """Build a DataFrame of question contributions for display in the scoring breakdown table.
+
+    Args:
+        contributions: list of (question_id, raw_weighted_contribution) pairs
+        question_lookup: dictionary for looking up Question objects by question id
+
+    Returns:
+        DataFrame with columns: Question, Your answer, Description, Score Contribution
+    """
+    return pd.DataFrame([
+        {
+            "Question": question_lookup[qid].question_text,
+            "Your answer": question_lookup[qid].user_response,
+            "Description": question_lookup[qid].description,
+            "Score Contribution": round(score, 2),
+        }
+        for qid, score in contributions
+    ])
 
 
 def question_interaction_section(question_collection_path):

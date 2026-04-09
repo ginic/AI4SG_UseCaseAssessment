@@ -1,10 +1,10 @@
 {
     "header": "Estimated Ambition of Project Scope",
-    "question_ids": ["O-0001", "O-0004", "T-0005", "T-0006", "T-0011"],
+    "question_ids": ["O-0001", "O-0002", "O-0004", "T-0003", "T-0005", "T-0006", "T-0007", "T-0010", "T-0011", "T-0017"],
     "thresholds": [
-        {"upper": -0.5, "header": "Large-sized project", "description": "Based on the demands of time constraints and challenging data formats, this project seems large and fairly complex technically. Plan to invest significant resources for it to be successful.", "color": "violet"},
-        {"lower": -0.5, "upper":0.5, "header": "Medium-sized project", "description": "Based on the demands of time constraints and data formats, this project seems moderately ambitious. Plan to invest significant resources for it to be successful.", "color":"yellow"},
-        {"lower":0.5, "header": "Small-sized project", "description": "Based on the demands of time constraints and data formats, this project seems smaller in scope. A small team should be able to complete it with sufficient time and access to technical resources.", "color": "green"
+        {"upper": -0.5, "header": "Large-sized project", "description": "Based on the demands of time constraints and challenging data formats, this project seems large and fairly complex technically. It will demand a lot from your from your product and technical teams for it to be successful.", "color": "violet"},
+        {"lower": -0.5, "upper":0.5, "header": "Medium-sized project", "description": "Assuming you address organizational friction and legal concerns first, this project seems moderately ambitious to implement in the planned timeframe. Plan to invest significant resources from your product and technical teams for it to be successful.", "color":"yellow"},
+        {"lower":0.5, "header": "Small-sized project", "description": "Assuming you address organizational friction and legal concerns first, this project seems relatively small in scope based on the time constraints and data formats. A small team should be able to complete it with sufficient time and access to technical resources.", "color": "green"
         }
     ]
 }

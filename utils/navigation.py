@@ -44,14 +44,14 @@ def add_navigation_buttons(current_page_name: str):
         # Show Back button if not on first page
         if current_index > 0:
             previous_page = PAGES[current_index - 1]
-            if st.button("← Back", use_container_width=True):
+            if st.button("← Back", width="content", type="primary"):
                 st.switch_page(previous_page["path"])
 
     with col3:
         # Show Next button if not on last page
         if current_index < len(PAGES) - 1:
             next_page = PAGES[current_index + 1]
-            if st.button("Next →", use_container_width=True):
+            if st.button("Next →", width="content", type="primary"):
                 st.switch_page(next_page["path"])
 
 

@@ -12,8 +12,12 @@ from utils.config import (
 )
 from utils.loader import load_question_collection
 from utils.navigation import add_navigation_buttons
+from utils.question_renderer import build_contributions_table
+from utils.visualization import render_score_bar
 
-SCORING_CATEGORIES = [ORGANIZATION_SCORING_PATH, TECHNICAL_SCORING_PATH, LEGAL_SCORING_PATH, AMBITION_SCORING_PATH]
+SCORING_CATEGORIES = [ORGANIZATION_SCORING_PATH, LEGAL_SCORING_PATH, TECHNICAL_SCORING_PATH, AMBITION_SCORING_PATH]
+
+DATAFRAME_ROW_HEIGHT = 200
 
 # Redirect to Introduction page on uninitialized app
 if st.session_state.get("questions") is None:
@@ -30,7 +34,6 @@ def main():
 
         st.subheader(question_collection.header)
 
-        # Using raw total response score
         score_bucket = question_collection.get_score_response(collection_score.normalized_weighted_score)
         if score_bucket:
             st.badge(score_bucket.header, color=score_bucket.color, width="stretch")
@@ -38,19 +41,35 @@ def main():
         else:
             st.error(f"Score '{collection_score}' is out of bounds. Please check score thresholds")
 
-        st.write(
-            f"Score normalized between -1 (challenging) and 1 (straightforward): {collection_score.normalized_weighted_score:.2f}"
-        )
-        st.write(f"Raw weighted average: {collection_score.weighted_score:.2f}")
-        st.write(f"Raw unweighted score: {collection_score.raw_response_score:.2f}")
+        if question_collection.thresholds:
+            st.plotly_chart(
+                render_score_bar(collection_score.normalized_weighted_score, question_collection.thresholds),
+                width="content",
+            )
 
         # Show detailed breakdown
         with st.expander("Show detailed scoring breakdown"):
-            for qid in question_collection.question_ids:
-                q = st.session_state[QUESTIONS_CACHE_KEY][qid]
-                st.write(f"{q.question_text}")
-                st.write(f"- Your answer: {q.user_response}")
-                st.write(f"- Score: {q.get_response_score()} (Importance: {q.importance_score})")
+            question_lookup = st.session_state[QUESTIONS_CACHE_KEY]
+            positive = [(qid, s) for qid, s in collection_score.question_contributions if s > 0]
+            negative = [(qid, s) for qid, s in collection_score.question_contributions if s < 0]
+            neutral = [(qid, s) for qid, s in collection_score.question_contributions if s == 0]
+
+            positive_label = "**Responses contributing to a higher score**"
+            negative_label = "**Responses contributing to a lower score**"
+            neutral_label = "**Neutral responses**"
+
+            for table_label, table_entries in [
+                (positive_label, positive),
+                (negative_label, negative),
+                (neutral_label, neutral),
+            ]:
+                if table_entries:
+                    st.markdown(table_label)
+                    st.dataframe(
+                        build_contributions_table(table_entries, question_lookup),
+                        row_height=DATAFRAME_ROW_HEIGHT,
+                        hide_index=True,
+                    )
 
     st.markdown("---")
     add_navigation_buttons("Results")
