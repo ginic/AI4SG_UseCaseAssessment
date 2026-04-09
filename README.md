@@ -122,6 +122,22 @@ Here is an example of the threshold configuration file. Note that the upper and 
 }
 ```
 
+## Scoring Approach
+
+Scores are computed as a weighted sum of individual question responses, then normalized to the range **-1 to 1** using a split normalization around zero:
+
+- A score of **1** means all questions were answered in the most favorable way.
+- A score of **-1** means all questions were answered in the most challenging way.
+- A score of **0** means the positive and negative responses exactly cancel out (neutral).
+
+The normalization formula is:
+- If `weighted_score > 0`: `normalized = weighted_score / max_possible_weighted_score`
+- If `weighted_score ≤ 0`: `normalized = weighted_score / abs(min_possible_weighted_score)`
+
+This approach preserves **0 as a stable neutral midpoint**, regardless of whether the positive and negative score ranges are symmetric. This means threshold values in the scoring rubric config are always interpretable relative to 0 — you do not need to adjust thresholds if question scores or importance weights are changed, as long as the question set remains the same.
+
+This differs from standard min-max scaling (`2*(X - min)/(max - min) - 1`), which only maps 0 → 0 when `min = -max`. For asymmetric question sets, standard min-max scaling would shift the neutral point, making threshold-setting less intuitive.
+
 ## Development
 
 Format and lint code with ruff:
