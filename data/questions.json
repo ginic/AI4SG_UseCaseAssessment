@@ -138,7 +138,7 @@
         },
         {
             "question_id": "O-0013",
-            "question_text": "Would a mistake of the system affect your material/assets?",
+            "question_text": "Would a mistake of the system affect negatively your material/assets?",
             "description": "Assesses whether system failure would place the organization’s physical or core mission-related assets at risk.",
             "question_type": "categorical",
             "answer_options": [
