@@ -69,7 +69,7 @@ def build_contributions_table(
     """Build a DataFrame of question contributions for display in the scoring breakdown table.
 
     Args:
-        contributions: list of (question_id, normalized_contribution) pairs
+        contributions: list of (question_id, raw_weighted_contribution) pairs
         question_lookup: dictionary for looking up Question objects by question id
 
     Returns:

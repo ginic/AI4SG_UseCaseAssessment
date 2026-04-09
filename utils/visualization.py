@@ -34,17 +34,15 @@ def render_score_bar(score: float, thresholds: list) -> go.Figure:
     fig.add_trace(go.Scatter(
         x=[score],
         y=[""],
-        mode="markers+text",
+        mode="markers",
         marker=dict(symbol="triangle-down", size=18, color="black"),
-        text=[f"{score:.2f}"],
-        textposition="top center",
         hovertemplate=f"Your score: {score:.2f}<extra></extra>",
         showlegend=False,
     ))
     fig.update_layout(
         barmode="overlay",
         height=100,
-        margin=dict(l=0, r=0, t=30, b=10),
+        margin=dict(l=0, r=0, t=10, b=10),
         xaxis=dict(
             range=[-1.05, 1.05],
             showgrid=False,
