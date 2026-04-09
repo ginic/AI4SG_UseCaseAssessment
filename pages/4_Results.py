@@ -50,14 +50,19 @@ def main():
             question_lookup = st.session_state[QUESTIONS_CACHE_KEY]
             positive = [(qid, s) for qid, s in collection_score.question_contributions if s > 0]
             negative = [(qid, s) for qid, s in collection_score.question_contributions if s < 0]
+            neutral = [(qid, s) for qid, s in collection_score.question_contributions if s == 0]
 
             if positive:
-                st.markdown(f"**Responses contributing to a higher score (max possible: {collection_score.max_weighted_score:.2f})**")
+                st.markdown("**Responses contributing to a higher score**")
                 st.dataframe(build_contributions_table(positive, question_lookup), width="content", hide_index=True)
 
             if negative:
-                st.markdown(f"**Responses contributing to a lower score (min possible: {collection_score.min_weighted_score:.2f})**")
+                st.markdown("**Responses contributing to a lower score**")
                 st.dataframe(build_contributions_table(negative, question_lookup), width="content", hide_index=True)
+
+            if neutral:
+                st.markdown("**Neutral responses**")
+                st.dataframe(build_contributions_table(neutral, question_lookup), width="content", hide_index=True)
 
     st.markdown("---")
     add_navigation_buttons("Results")

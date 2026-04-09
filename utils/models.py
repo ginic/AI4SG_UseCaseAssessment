@@ -123,8 +123,7 @@ class QuestionScoringCollection(BaseModel):
     """Define the responses that are triggered for various possible scores ranges"""
 
     def calculate_score(self, question_lookup: dict[str, Question]) -> ScoreResult:
-        """Calculates the raw and weighted score of the
-        responses to the questions
+        """Calculates the raw and weighted score of the responses to the questions
 
         Args:
             question_lookup: dictionary for looking up questions and responses by question id
@@ -134,7 +133,10 @@ class QuestionScoringCollection(BaseModel):
         """
         total_weighted_score = 0.0
         total_response_score = 0.0
-        answered: list[tuple[str, float]] = []  # (qid, weighted_contribution)
+        answered: list[tuple[str, float]] = []  # (qid, normalized_weighted_contribution)
+
+        _, max_weighted_score = self.get_extreme_score(question_lookup)
+        _, min_weighted_score = self.get_extreme_score(question_lookup, is_min=True)
 
         for qid in self.question_ids:
             question = question_lookup[qid]
@@ -143,10 +145,11 @@ class QuestionScoringCollection(BaseModel):
                 wc = response_score * question.importance_score
                 total_response_score += response_score
                 total_weighted_score += wc
-                answered.append((qid, wc))
-
-        _, max_weighted_score = self.get_extreme_score(question_lookup)
-        _, min_weighted_score = self.get_extreme_score(question_lookup, is_min=True)
+                if wc > 0:
+                    norm_denominator = max_weighted_score
+                else:
+                    norm_denominator = abs(min_weighted_score)
+                answered.append((qid, wc / norm_denominator))
 
         # If the weighted average score is greater than 0, normalize by the maximum weighted raw score
         if total_weighted_score > 0:
