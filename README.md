@@ -103,9 +103,9 @@ Grouping questions to be displayed on a particular page is done by simply listin
 Set up your application pages in the `pages` folder to read from the appropriate JSON file.
 
 ## Scoring Rubric Configuration
-Scoring configurations with thresholds to determine the final decision to display are defined separately from questions and display pages, so that you can score on more parameters than there are pages and use the same questions in multiple scoring rubrics.
+Scoring configurations with thresholds to determine the final decision ranges to display are defined separately from questions and display pages, so that you can score on more parameters than there are pages and use the same questions in multiple scoring rubrics.
 
-The normalized scoring ranges for each rubric range from -1 to 1, so ensure threshold values are within this range. This allows you to use the same thresholds even if the importance of questions is changed. A script to validate the scoring rubric and compute minimum and maximum scores is available in `utils/analyze_scoring.py` and can be run with `python -m utils.analyze_scoring --help`.
+The normalized scoring ranges for each rubric range from -1 to 1, so ensure threshold values are within this range. This allows you to use the same thresholds even if the number of questions or their relative importance of is changed. A script to validate the scoring rubric and compute minimum and maximum scores is available in `utils/analyze_scoring.py` and can be run with `python -m utils.analyze_scoring --help`.
 
 Define your scoring rubric with a display header, list of question ids, and thresholds with a header, description, color, upper bound (exlusive) and lower (inclusive) bound range. If the upper bound is left out, it's assumed to be infinity, and if the lower bound is left out, it's assumed to be negative infinity. One of the thresholds will be displayed on the final results page for each scoring rubric, depending on what the responses to questions are.
 
@@ -128,7 +128,7 @@ Scores are computed as a weighted sum of individual question responses, then nor
 
 - A score of **1** means all questions were answered in the most favorable way.
 - A score of **-1** means all questions were answered in the most challenging way.
-- A score of **0** means the positive and negative responses exactly cancel out (neutral).
+- A score of **0** means the positive and negative responses cancel out (neutral).
 
 The normalization formula is:
 - If `weighted_score > 0`: `normalized = weighted_score / max_possible_weighted_score`
