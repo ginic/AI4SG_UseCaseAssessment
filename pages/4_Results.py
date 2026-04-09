@@ -42,7 +42,7 @@ def main():
         if question_collection.thresholds:
             st.plotly_chart(
                 render_score_bar(collection_score.normalized_weighted_score, question_collection.thresholds),
-                use_container_width=True,
+                width="content",
             )
 
         # Show detailed breakdown
@@ -53,11 +53,11 @@ def main():
 
             if positive:
                 st.markdown("**Responses contributing to a higher score**")
-                st.dataframe(build_contributions_table(positive, question_lookup), use_container_width=True, hide_index=True)
+                st.dataframe(build_contributions_table(positive, question_lookup), width="content", hide_index=True)
 
             if negative:
                 st.markdown("**Responses contributing to a lower score**")
-                st.dataframe(build_contributions_table(negative, question_lookup), use_container_width=True, hide_index=True)
+                st.dataframe(build_contributions_table(negative, question_lookup), width="content", hide_index=True)
 
     st.markdown("---")
     add_navigation_buttons("Results")
