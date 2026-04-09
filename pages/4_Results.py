@@ -15,7 +15,9 @@ from utils.navigation import add_navigation_buttons
 from utils.question_renderer import build_contributions_table
 from utils.visualization import render_score_bar
 
-SCORING_CATEGORIES = [ORGANIZATION_SCORING_PATH, TECHNICAL_SCORING_PATH, LEGAL_SCORING_PATH, AMBITION_SCORING_PATH]
+SCORING_CATEGORIES = [ORGANIZATION_SCORING_PATH, LEGAL_SCORING_PATH, TECHNICAL_SCORING_PATH, AMBITION_SCORING_PATH]
+
+DATAFRAME_ROW_HEIGHT = 200
 
 # Redirect to Introduction page on uninitialized app
 if st.session_state.get("questions") is None:
@@ -52,17 +54,22 @@ def main():
             negative = [(qid, s) for qid, s in collection_score.question_contributions if s < 0]
             neutral = [(qid, s) for qid, s in collection_score.question_contributions if s == 0]
 
-            if positive:
-                st.markdown("**Responses contributing to a higher score**")
-                st.dataframe(build_contributions_table(positive, question_lookup), width="content", hide_index=True)
+            positive_label = "**Responses contributing to a higher score**"
+            negative_label = "**Responses contributing to a lower score**"
+            neutral_label = "**Neutral responses**"
 
-            if negative:
-                st.markdown("**Responses contributing to a lower score**")
-                st.dataframe(build_contributions_table(negative, question_lookup), width="content", hide_index=True)
-
-            if neutral:
-                st.markdown("**Neutral responses**")
-                st.dataframe(build_contributions_table(neutral, question_lookup), width="content", hide_index=True)
+            for table_label, table_entries in [
+                (positive_label, positive),
+                (negative_label, negative),
+                (neutral_label, neutral),
+            ]:
+                if table_entries:
+                    st.markdown(table_label)
+                    st.dataframe(
+                        build_contributions_table(table_entries, question_lookup),
+                        row_height=DATAFRAME_ROW_HEIGHT,
+                        hide_index=True,
+                    )
 
     st.markdown("---")
     add_navigation_buttons("Results")
