@@ -99,6 +99,8 @@ class ScoreResult(BaseModel):
     """The total weighted score normalized by the weighted maxmium (if weighted score > 0) or minimum (if weighted score <= 0)"""
     raw_response_score: float = 0.0
     """The total response score without weights. This is the sum of the raw score for each question."""
+    question_contributions: list[tuple[str, float]] = Field(default_factory=list)
+    """Per-question (question_id, normalized_contribution) pairs in collection question order."""
 
 
 class QuestionScoringCollection(BaseModel):
@@ -124,17 +126,20 @@ class QuestionScoringCollection(BaseModel):
             question_lookup: dictionary for looking up questions and responses by question id
 
         Returns:
-            ScoreResult: the weighted, normalized weighted and raw score for the responses
+            ScoreResult: the weighted, normalized weighted, raw score, and per-question contributions
         """
         total_weighted_score = 0.0
         total_response_score = 0.0
+        answered: list[tuple[str, float]] = []  # (qid, weighted_contribution)
 
         for qid in self.question_ids:
             question = question_lookup[qid]
             response_score = question.get_response_score()
             if response_score is not None:
+                wc = response_score * question.importance_score
                 total_response_score += response_score
-                total_weighted_score += response_score * question.importance_score
+                total_weighted_score += wc
+                answered.append((qid, wc))
 
         _, max_weighted_score = self.get_extreme_score(question_lookup)
         _, min_weighted_score = self.get_extreme_score(question_lookup, is_min=True)
@@ -146,10 +151,21 @@ class QuestionScoringCollection(BaseModel):
             # If the weighted score is less than 0, normalize by the minimum weighted score, but keep the negative sign
             weighted_norm_denominator = abs(min_weighted_score)
 
+        contributions = []
+        for qid, wc in answered:
+            if wc > 0:
+                normalized = wc / max_weighted_score
+            elif wc < 0:
+                normalized = wc / abs(min_weighted_score)
+            else:
+                normalized = 0.0
+            contributions.append((qid, normalized))
+
         return ScoreResult(
             weighted_score=total_weighted_score,
             normalized_weighted_score=total_weighted_score / weighted_norm_denominator,
             raw_response_score=total_response_score,
+            question_contributions=contributions,
         )
 
     def get_score_response(self, score: float) -> ThresholdResponse | None:
