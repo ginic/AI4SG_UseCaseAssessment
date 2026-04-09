@@ -3,7 +3,7 @@
         {
             "question_id": "O-0001",
             "question_text": "Do we need to fix it within the next 3 months?",
-            "description": "This question assesses the time criticality of addressing the problem. Consider whether the issue requires a functional solution within the next three months (e.g. to avoid operational disruption, compliance issues, or missed opportunities), or whether it can be addressed as part of a longer-term improvement initiative",
+            "description": "This question assesses the time criticality of addressing the problem. Consider whether the issue requires a functional solution within the next three months (e.g. to avoid operational disruption, compliance issues, or missed opportunities), or whether it can be addressed as part of a longer-term improvement initiative.",
             "question_type": "categorical",
             "answer_options": [
                 ["Yes", -1.0],
@@ -14,20 +14,19 @@
         {
             "question_id": "O-0002",
             "question_text": "What is the earliest realistic timeframe to deliver usable value?",
-            "description": "This question assesses the organisation’s realistic expectation for when a first usable version of the solution can deliver value.",
+            "description": "This question assesses the organisation’s realistic expectation for when a first usable version of the solution can deliver value. More time to understand the problem space and experiment with possible solutions gives a better chance of success.",
             "question_type": "categorical",
             "answer_options": [
                 ["3 Months", -1.0],
                 ["6 Months", 0.0],
-                ["1 Year", 1.0],
-                ["2 Years", 1.0]
+                ["1 Year or longer", 1.0]
             ],
             "importance_score": 1.0
         },
         {
             "question_id": "O-0003",
             "question_text": "Is this a business process improvement or mission supporting?",
-            "description": "This question distinguishes whether the problem primarily concerns improving internal operations and workflows or directly supporting the mission.",
+            "description": "This question distinguishes whether the problem primarily concerns improving internal operations and workflows or directly supporting the mission. Addressing mission supporting work is typically more challenging.",
             "question_type": "categorical",
             "answer_options": [
                 ["Process", 0.0],
@@ -38,7 +37,7 @@
         {
             "question_id": "O-0004",
             "question_text": "Is there a clear beneficiary or end user?",
-            "description": "This question assesses whether there is a clearly identifiable group or role that will use the solution and benefit from it.",
+            "description": "This question assesses whether there is a clearly identifiable group or role that will use the solution and benefit from it. Having a clear benefiary or end user makes it easier to understand development prioritites and evaluate success.",
             "question_type": "categorical",
             "answer_options": [
                 ["Yes", 1.0],
@@ -49,7 +48,7 @@
         {
             "question_id": "O-0005",
             "question_text": "How willing is your org to spend money on a tech solution?",
-            "description": "Assesses whether the organisation is willing and able to allocate budget to a technical solution.",
+            "description": "Assesses whether the organisation is willing and able to allocate budget to a technical solution. AI/ML solutions cost money to use and maintain, as does hiring a team appropriate expertise.",
             "question_type": "categorical",
             "answer_options": [
                 ["Willing", 1.0],
@@ -70,19 +69,20 @@
         },
         {
             "question_id": "O-0007",
-            "question_text": "Attitude within org toward AI?",
-            "description": "Assesses the overall organisational attitude toward AI and advanced technologies.",
+            "question_text": "What is the attitude within org toward AI?",
+            "description": "Assesses the overall organisational attitude toward AI. Does the team have realistic expectations regarding AI's capabilities? Will your team be motivated to invest time into learning how to use it and experimenting with appropriate solutions? Although it's important that your team be open to trying AI, being overconfident in its abilities may result in unachievable project goals.",
             "question_type": "categorical",
             "answer_options": [
-                ["Excited", 1.0],
+                ["Highly enthusiastic", -1.0],
+                ["Optimistic", 1.0],
                 ["Neutral", 0.0],
-                ["Negative", -1.0]
+                ["Resistant", -1.0]
             ],
             "importance_score": 1.0
         },
         {
             "question_id": "O-0008",
-            "question_text": "Champions/Ambassador: Can you identify an influential person who has the flexibility to support efforts/experiments?",
+            "question_text": "Champions/Ambassador: Can you identify an influential person who has the flexibility to support efforts or experiments?",
             "description": "Assesses whether there is at least one person with the mandate, credibility, and decision-making power to actively support and drive experimentation or implementation.",
             "question_type": "categorical",
             "answer_options": [
@@ -105,8 +105,8 @@
         },
         {
             "question_id": "O-0010",
-            "question_text": "Is the system addressing a missing critical area?",
-            "description": "Determines if the problem being addressed is central to the organization's primary goals.",
+            "question_text": "Is the system addressing a mission critical area?",
+            "description": "Determines if the problem being addressed is central to the organization's primary goals. Mission critical areas require caution and spending more time on gathering information and support.",
             "question_type": "categorical",
             "answer_options": [
                 ["Yes", -1.0],
@@ -149,7 +149,7 @@
         },
         {
             "question_id": "O-0014",
-            "question_text": "Would a mistake of the system affect your staff?",
+            "question_text": "Would a mistake of the system negatively affect your staff?",
             "description": "Consider physical, psychological, legal, or workload-related impacts on staff due to errors or system failure.",
             "question_type": "categorical",
             "answer_options": [
@@ -160,7 +160,7 @@
         },
         {
             "question_id": "O-0015",
-            "question_text": "Would a mistake of the system affect customers/beneficiaries/donors?",
+            "question_text": "Would a mistake of the system negatively affect customers/beneficiaries/donors?",
             "description": "Assesses negative impacts such as reduced service quality, loss of trust, or unmet expectations for external stakeholders.",
             "question_type": "categorical",
             "answer_options": [
@@ -171,7 +171,7 @@
         },
         {
             "question_id": "O-0016",
-            "question_text": "Would a mistake affect of your system your mission/mandate?",
+            "question_text": "Would a mistake affect of your system negatively your mission/mandate?",
             "description": "Assesses whether system failure could undermine a specific operation or project that contributes to the organization's mission.",
             "question_type": "categorical",
             "answer_options": [
@@ -182,7 +182,7 @@
         },
         {
             "question_id": "O-0017",
-            "question_text": "Would a mistake of the system affect your reputation?",
+            "question_text": "Would a mistake of the system affect negatively your reputation?",
             "description": "Assesses whether errors or failure could lead to reputational damage or loss of trust among external stakeholders and the public.",
             "question_type": "categorical",
             "answer_options": [
@@ -216,14 +216,14 @@
         {
             "question_id": "T-0003",
             "question_text": "What data formats will be used in the system?",
-            "description": "Identifies the data formats that the system will actively process, analyse, or manipulate.",
+            "description": "Identifies the data formats that the system will actively process, analyse, or manipulate. More structure and predictablility in the data will make it easier to process. Generally structured data is easiest, followed by text or geospatial data. Images, video or a mix of formats is usually the most difficult.",
             "question_type": "categorical",
             "answer_options": [
-                ["Combination", -1.0],
-                ["Text", 0.5],
+                ["A combination of different formats, including documents with forms, images or tables", -1.0],
+                ["Text only", 0.0],
                 ["Audio", -0.5],
-                ["Images", -1.0],
-                ["Spreadsheets", 0.5],
+                ["Images", -0.5],
+                ["Spreadsheets containing numbers or predefined labels only", 0.5],
                 ["Structured Database", 1.0],
                 ["Geospatial", 0.0],
                 ["Video", -0.5]
@@ -232,7 +232,7 @@
         },
         {
             "question_id": "T-0004",
-            "question_text": "What is the expected quantity of data used in your system?",
+            "question_text": "What is the expected quantity of data your system needs to analyze or process?",
             "description": "This question assesses the scale of data the system is expected to process, analyse, or store. Larger volumes often lead to higher computational cost and infrastructure needs.",
             "question_type": "categorical",
             "answer_options": [
@@ -252,14 +252,14 @@
                 ["daily/weekly", 1.0],
                 ["monthly/quarterly", 1.0],
                 ["annually", 0.0],
-                ["once", -1.0]
+                ["once", 0.0]
             ],
             "importance_score": 1.0
         },
         {
             "question_id": "T-0006",
             "question_text": "Are you able to define the scope of the project very precisely?",
-            "description": "A well-defined scope reduces uncertainty and implementation risk. Assesses if objectives and success criteria are unlikely to change.",
+            "description": "A well-defined scope reduces uncertainty and implementation risk. Answer 'Yes' if objectives and success criteria are unlikely to change.",
             "question_type": "categorical",
             "answer_options": [
                 ["Yes", 1.0],
@@ -291,8 +291,8 @@
         },
         {
             "question_id": "T-0009",
-            "question_text": "If you would only implement core functionality to have a minimal viable product?",
-            "description": "Assesses whether delivering only core functions would already provide meaningful value.",
+            "question_text": "Can you implement some core functionality that has value even with some desired features missing?",
+            "description": "Answering 'Yes' suggests you can implement a minimum viable prouduct that can be used as a starting point for collecting data and beta testing.",
             "question_type": "categorical",
             "answer_options": [
                 ["Yes", 1.0],
@@ -302,6 +302,23 @@
         },
         {
             "question_id": "T-0010",
+            "question_text": "Will you be able to test multiple prototype versions to iterate on the design?",
+            "description": "More opportunities for gathering information and feedback will help your team develop a successful final version.",
+            "question_type": "categorical",
+            "answer_options": [
+                [
+                    "Yes",
+                    1.0
+                ],
+                [
+                    "No",
+                    -1.0
+                ]
+            ],
+            "importance_score": 1.0
+        },
+        {
+            "question_id": "T-0011",
             "question_text": "Will the project be outward-facing? (e.g. a digital service for partners or costumers)",
             "description": "Outward-facing systems typically require higher standards for reliability, security, and governance.",
             "question_type": "categorical",
@@ -312,9 +329,9 @@
             "importance_score": 1.0
         },
         {
-            "question_id": "T-0011",
+            "question_id": "T-0012",
             "question_text": "Where will the system primarily be used?",
-            "description": "Assesses the physical and organisational context in which the system will be used.",
+            "description": "Assesses the physical and organisational context in which the system will be used. Connecting to AI models that run on large servers is typically easier than working in offline settings.",
             "question_type": "categorical",
             "answer_options": [
                 ["Office/Online", 1.0],
@@ -323,7 +340,7 @@
             "importance_score": 1.0
         },
         {
-            "question_id": "T-0012",
+            "question_id": "T-0013",
             "question_text": "Will the system need to function with limited or no internet connectivity?",
             "description": "Connectivity constraints have major implications for system architecture, data synchronisation, complexity, and maintenance.",
             "question_type": "categorical",
@@ -334,7 +351,7 @@
             "importance_score": 1.0
         },
         {
-            "question_id": "T-0013",
+            "question_id": "T-0014",
             "question_text": "Do you have an established way to store data to make it centrally accessible?",
             "description": "Central data storage is a prerequisite for collaboration, automation, version control, security, and long-term sustainability.",
             "question_type": "categorical",
@@ -345,7 +362,7 @@
             "importance_score": 1.0
         },
         {
-            "question_id": "T-0014",
+            "question_id": "T-0015",
             "question_text": "Do you have IT support already?",
             "description": "Assesses whether the organisation has a basic, established IT contact, role, or unit responsible for IT systems and infrastructure.",
             "question_type": "categorical",
@@ -356,7 +373,7 @@
             "importance_score": 1.0
         },
         {
-            "question_id": "T-0015",
+            "question_id": "T-0016",
             "question_text": "Is your IT support capable of running and maintaining the system?",
             "description": "Assesses whether existing IT support has the practical capacity and skills for routine operation, updates, and security.",
             "question_type": "categorical",
@@ -367,7 +384,7 @@
             "importance_score": 1.0
         },
         {
-            "question_id": "T-0016",
+            "question_id": "T-0017",
             "question_text": "Does the project require building an entirely new system or tool?",
             "description": "Assesses user adoption and change management. Extending familiar tools often simplifies the transition for users.",
             "question_type": "categorical",
@@ -378,9 +395,9 @@
             "importance_score": 1.0
         },
         {
-            "question_id": "T-0017",
+            "question_id": "T-0018",
             "question_text": "Will the system require system integration in the existing tech infrastructure?",
-            "description": "Focuses on technical dependencies such as data exchange or shared authentication with existing systems.",
+            "description": "Focuses on technical dependencies such as data exchange or shared authentication with existing systems. Integrating with existing systems adds technical complexity.",
             "question_type": "categorical",
             "answer_options": [
                 ["Yes", -1.0],
@@ -402,7 +419,7 @@
         {
             "question_id": "L-0002",
             "question_text": "What is the nature is the sensitive data you will use in your system? Choose only one, even if multiple apply.",
-            "description": "Classifies the type of sensitivity to identify required safeguards. (Note: Only relevant if L-0001 is Yes).",
+            "description": "Any sensitive data involved in your system should be handled carefully with proper security and safeguards in place.",
             "question_type": "categorical",
             "answer_options": [
                 ["Not applicable", 0.0],
@@ -423,7 +440,8 @@
             "question_type": "categorical",
             "answer_options": [
                 ["Yes", 1.0],
-                ["No", -1.0]
+                ["No", -1.0],
+                ["Unsure", -1.0]
             ],
             "importance_score": 1.0
         },
