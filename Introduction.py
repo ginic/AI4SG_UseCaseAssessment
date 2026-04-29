@@ -15,8 +15,9 @@ st.set_page_config(page_title="Good Tech Reality Check", layout="wide")
 initialize_questions_cache()
 
 st.title("Good Tech Reality Check")
-st.warning("This is still a draft version. Please give us your feedback so we can help improve!")
 st.markdown(body=INTRO_TEXT_MARKDOWN.read_text())
+
+st.warning("This is still a beta version. Please give us your feedback so we can help improve!")
 
 # Add navigation buttons
 st.markdown("---")
