@@ -51,7 +51,8 @@ def add_navigation_buttons(current_page_name: str):
         # Show Next button if not on last page
         if current_index < len(PAGES) - 1:
             next_page = PAGES[current_index + 1]
-            if st.button("Next →", width="content", type="primary"):
+            next_button_text = "Start Reality Check" if current_index == 0 else "Next →"
+            if st.button(next_button_text, width="content", type="primary"):
                 st.switch_page(next_page["path"])
 
 
