@@ -2,7 +2,7 @@
 The Good Tech Reality Check is a process designed in two parts for NGOs and other mission driven organizations to **help decide which tech project to pursue**. It was designed by tech and AI/ML experts, researchers and NGO practitioners as an assistive guidance for their own internal decision making. 
 
 ### Part One: The conversation zine
-The reality check conversation zine is a guide to use with others within your organization to *determine if technology (and which technology)* is the right solution for the specific problem you identified and want to tackle. You can [download the zines here](https://drive.google.com/file/d/1GgTkR7UVZnump5-4YADdjITAD4Gx6LCI/view?usp=sharing).
+The reality check conversation zine is a guide to use with others within your organization to *determine if technology (and which technology)* is the right solution for the specific problem you identified and want to tackle. You can [download the zines here](https://drive.google.com/drive/folders/1Lv5weiidskevwzc38OhKCbVgE3KTRHXG?usp=sharing).
 
 ### Part two: The online tool
 The reality check online tool will guide you through *relevant questions and give you a score* and some feedback for you to consider before going ahead with your project. What the tool cannot help you with is the general problem definition process (if that is your issue at the moment, find more info here). For the application of the tool, we *assume you already identified a relevant problem and assessed if the tech you have in mind is actually a good solution to help it.* If that is the case, you are ready to go by clicking on the **“start reality check”** button below.
