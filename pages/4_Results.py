@@ -72,6 +72,11 @@ def main():
                     )
 
     st.markdown("---")
+    st.markdown(
+        "We would love your input—please help us by filling out our "
+        "[Google Form](https://forms.gle/erA7MhvmoNG6sy668) or by submitting an issue on "
+        "[GitHub](https://github.com/ginic/AI4SG_UseCaseAssessment)."
+    )
     add_navigation_buttons("Results")
 
 
