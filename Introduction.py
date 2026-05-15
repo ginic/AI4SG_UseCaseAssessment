@@ -15,7 +15,7 @@ st.set_page_config(page_title="Good Tech Reality Check", layout="wide")
 initialize_questions_cache()
 
 st.title("Good Tech Reality Check")
-st.markdown(body=INTRO_TEXT_MARKDOWN.read_text())
+st.markdown(body=INTRO_TEXT_MARKDOWN.read_text(), unsafe_allow_html=True)
 
 st.warning("This is still a beta version. Please give us your feedback so we can help improve!")
 
